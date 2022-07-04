@@ -1,7 +1,7 @@
 :root{
-	--background-white: #EEEEEE;
-	--background-black: #111111;
-	--primary: #660033;
+	--white: #EEEEEE;
+	--black: #111111;
+	--primary: #880044;
 	--secondary: #CCAA11;
 	--text: #111111;
 }
@@ -12,28 +12,28 @@
 
 body {
 	margin: 0;
-	background-color: var(--background-black);
+	background-color: var(--black);
 	overflow-x: hidden;
 }
 
 .h1 {
 	font-size: 10vw;
 	font-weight: bold;
-	color: var(--primary);
+	color: var(--white);
 	margin: 0 0;
 }
 
 .h2 {
 	font-size: 6.2vw;
 	font-weight: bold;
-	color: var(--secondary);
+	color: var(--primary);
 	margin: 0 0; 
 }
 
 .h3 {
 	font-size: 3.1vw;
 	font-weight: bold;
-	color: var(--primary);
+	color: var(--secondary);
 	margin: 0 0; 
 }
 
