@@ -8,6 +8,7 @@
 }
 * {
 	font-family: 'Space Grotesk', sans-serif;
+	margin: 0;
 }
 
 
@@ -21,25 +22,30 @@ body {
 	font-size: 10vw;
 	font-weight: bold;
 	color: var(--white);
-	margin: 0 0;
 }
 
 .h2 {
 	font-size: 6.2vw;
 	font-weight: bold;
 	color: var(--primary);
-	margin: 0 0; 
 }
 
 .h3 {
 	font-size: 3.1vw;
 	font-weight: bold;
 	color: var(--secondary);
-	margin: 0 0; 
 }
 
 p {
 	font-size: 1.55vw;
 	color: var(--text-white);
 
+}
+
+body {
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+body::-webkit-scrollbar {
+    display: none;  /* Safari and Chrome */
 }
