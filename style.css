@@ -3,13 +3,13 @@
 	flex-direction: row;
 	flex-wrap: nowrap;
 	justify-content: center;
-	margin: 5vh 0;
+	margin: 0vh 0;
 }
 
 #content {
 	max-width: 60vw;
 	flex-grow: 1;
-	padding: 0% 5%;
+	padding: 0 5%;
 	background-color: var(--background-white);
 }
 
