@@ -3,7 +3,8 @@
 	--black: #111111;
 	--primary: #880044;
 	--secondary: #CCAA11;
-	--text: #111111;
+	--text-black: #111111;
+	--text-white: #EEEEEE;
 }
 * {
 	font-family: 'Space Grotesk', sans-serif;
@@ -39,6 +40,6 @@ body {
 
 p {
 	font-size: 1.55vw;
-	color: var(--text);
+	color: var(--text-white);
 
 }
