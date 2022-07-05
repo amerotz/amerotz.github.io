@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>amerotz - Lost Texts</title>
+		<script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.js"></script>
+		<script src="js/writing.js"></script>
+		<link rel="stylesheet" href="css/general.css"/>
+		<style>
+			body {
+				padding: 0vh 10vw;
+				overflow-y: hidden;
+			}
+			#all {
+				height: 100vh;
+				padding: 2% 5%;
+
+			}
+			#container {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				margin: 2%;
+			}
+			.sec {
+				width: 48%;
+				max-height: 60vh;
+			}
+			textarea {
+				width: 100%;
+				height: 50vh;
+				resize: none;
+				border-style: none;
+				text-align: left;
+				vertical-align: top;
+				font-size: 1vw;
+				box-sizing: border-box;
+				padding: 5%;
+			}
+			button {
+				font-weight: bold;
+				font-size: 3vh;
+				padding: 2%;
+				background-color: transparent;
+				border-style: solid;
+				border-width: 0.2vw;
+				border-color: var(--white);
+				color: var(--white);
+				border-radius: 1vw;
+				width: 30%;
+			}
+			button:hover{
+				color: var(--primary);
+				border-color: var(--primary);
+			}
+			#btn {
+				width: 100%;
+				height: 10vh;
+				display: flex;
+				justify-content: space-evenly;
+				align-items: center;
+				margin: 1%;
+			}
+			main {
+				height: 50vh;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="all">
+			<h1 class="h2">Lost texts</h1>
+			<p class="h3">by amerotz</p>
+			<div id="container">
+				<div class="sec">
+					<form id="da_form">
+						<textarea id="user_input">Type something here!</textarea>
+						<p>Chars left: <span id="counter">0</span></p>
+						<div id="btn">
+							<button type="button" onclick="changeParams()">random</button>
+						</div>
+					</form>
+				</div>
+				<div class="sec">
+					<main id="text_"></main>
+					<p id="settings"></p>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
