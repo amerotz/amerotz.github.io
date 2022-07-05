@@ -2,6 +2,7 @@
 	--white: #EEEEEE;
 	--black: #111111;
 	--primary: #880044;
+	--primary-on-black: #FF1188;
 	--secondary: #CCAA11;
 	--text-black: #111111;
 	--text-white: #EEEEEE;
@@ -16,11 +17,6 @@ a {
 	color: var(--secondary);
 }
 
-a:visited {
-	color: var(--primary);
-}
-
-
 body {
 	margin: 0;
 	background-color: var(--black);
@@ -31,6 +27,12 @@ body {
 	font-size: 10vw;
 	font-weight: bold;
 	color: var(--white);
+}
+
+.h2-dark {
+	font-size: 6.2vw;
+	font-weight: bold;
+	color: var(--primary-on-black);
 }
 
 .h2 {
@@ -48,7 +50,6 @@ body {
 p {
 	font-size: 1.75vw;
 	color: var(--text-white);
-
 }
 
 body {
