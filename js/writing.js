@@ -35,7 +35,7 @@ function setup() {
   tot_h = height*0.8
 
   xlim = int(tot_w/char_w)
-  ylim = int(xlim*0.9)
+  ylim = int(tot_h/int(char_w/0.9))
 
   textarea = document.getElementById('user_input')
   da_form = document.getElementById('da_form')
