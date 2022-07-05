@@ -8,7 +8,16 @@
 }
 * {
 	font-family: 'Space Grotesk', sans-serif;
+	text-transform: lowercase;
 	margin: 0;
+}
+
+a {
+	color: var(--secondary);
+}
+
+a:visited {
+	color: var(--primary);
 }
 
 
@@ -37,7 +46,7 @@ body {
 }
 
 p {
-	font-size: 1.55vw;
+	font-size: 1.75vw;
 	color: var(--text-white);
 
 }
