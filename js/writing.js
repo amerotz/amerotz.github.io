@@ -16,7 +16,7 @@ let ylim;
 let l2r;
 let regularity;
 
-let textarea;
+let textarea, da_form;
 let count_span;
 
 function setup() {
@@ -37,13 +37,17 @@ function setup() {
   xlim = int(tot_w/char_w)
   ylim = int(xlim*0.9)
 
-  document.getElementById('text_form').reset()
   textarea = document.getElementById('user_input')
+  da_form = document.getElementById('da_form')
+  da_form.reset()
+
   let tmp = textarea.value
   textarea.value = tmp.slice(0, xlim*ylim)
   textarea.setAttribute('maxlength', xlim*ylim)
 
   count_span = document.getElementById('counter')
+  count_span.innerHTML = xlim*ylim - 1
+  textarea.addEventListener("keyup", doStuff);
   textarea.addEventListener("keydown", count);
 
   changeParams()
@@ -55,9 +59,10 @@ function count(e){
   } else{
     count_span.innerHTML = xlim*ylim - len-1;
   }
+  doStuff()
 }
 
-function doStuff(){
+function doStuff(e){
   background(255)
 
   let _text = textarea.value
@@ -77,6 +82,12 @@ function changeParams(){
   min_strokes = 1
   alphabet_size = 15 + Math.floor(16*Math.random())
 
+  document.getElementById('settings').innerHTML =
+    `current: ${l2r ? 'left to right' : 'right to left'},
+    ${hstrokes}x${vstrokes} grid,
+    ${min_strokes}-${max_strokes} strokes,
+    alphabet size ${alphabet_size}`
+
   doStuff()
 }
 
@@ -88,7 +99,7 @@ function writeText(source, xlim, ylim, w, h, off_x, off_y, color, _stroke, seed,
   let i = start
   let j = 1;
   let capital = true
-  let ignore = [',', '.', ':', ';', '\t']
+  let ignore = [',', '.', ':', ';', '\t', '!', '?']
 
   for(let x = 0; x < source.length; x++){
     if (ignore.includes(source[x])) continue
@@ -112,10 +123,10 @@ function writeText(source, xlim, ylim, w, h, off_x, off_y, color, _stroke, seed,
 
     let c = source.charCodeAt(x);
     c %= alphabet_size
-    letter(i*w/xlim + w/(2*xlim) + off_x + char_w*(0.5-Math.random())*regularity,
-      j*h/ylim - h/(2*ylim) + off_y + char_w*(0.5-Math.random())*regularity,
-      w/(2*xlim) - w/(5*xlim) + char_w*(0.5-Math.random())*regularity,
-      h/(2*ylim) - h/(10*ylim) + char_w*(0.5-Math.random())*regularity,
+    letter(i*w/xlim + w/(2*xlim) + off_x + char_w*(0.5-random())*regularity,
+      j*h/ylim - h/(2*ylim) + off_y + char_w*(0.5-random())*regularity,
+      w/(2*xlim) - w/(5*xlim) + char_w*(0.5-random())*regularity,
+      h/(2*ylim) - h/(10*ylim) + char_w*(0.5-random())*regularity,
       c*100, color, _stroke)
 
     i += l2r ? 1 : -1
