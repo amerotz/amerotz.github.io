@@ -11,17 +11,54 @@
 	font-family: 'Space Grotesk', sans-serif;
 	text-transform: lowercase;
 	margin: 0;
+	color: var(--black);
 }
 
 a {
+	font-weight: bold;
+}
+
+
+b {
 	color: var(--secondary);
 }
 
 body {
 	margin: 0;
-	background-color: var(--black);
+	background-color: var(--white);
 	overflow-x: hidden;
 }
+.title {
+	background-color: var(--white);
+	height: 15vh;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	position: sticky;
+	top: 0;
+	z-index: 1;
+}
+.title a {
+	text-decoration: none;
+}
+
+.black {
+	color: var(--black);
+}
+
+.white{
+	color: var(--white);
+}
+
+.primary {
+	color: var(--primary);
+}
+
+.secondary {
+	color: var(--secondary);
+}
+
+/*
 
 .h1 {
 	font-size: max(10vh, 10vw);
@@ -51,6 +88,8 @@ p, li {
 	font-size: max(1.75vw, 2vh);
 	color: var(--text-white);
 }
+
+*/
 
 body {
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
