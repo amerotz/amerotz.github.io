@@ -26,12 +26,6 @@ li {
 	padding: 1%;
 }
 
-#contact {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-}
-
 #album-gallery {
 	display: flex;
 	flex-direction: row;
@@ -40,7 +34,7 @@ li {
 }
 
 .album {
-	width: 34%;
+	width: 21%;
 	flex-grow: 1;
 	padding: 1vw;
 }
