@@ -26,6 +26,24 @@ li {
 	padding: 1%;
 }
 
+#poem-gallery {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-content: center;
+}
+
+.poem {
+	width: 16%;
+	flex-grow: 1;
+	padding: 1vw;
+}
+
+.poem img {
+	border-color: var(--black);
+	border: solid 0.1vw;
+}
+
 #album-gallery {
 	display: flex;
 	flex-direction: row;
@@ -52,8 +70,12 @@ li {
 	opacity: 30%;
 }
 
+.name {
+	font-weight: bold
+}
+
 @media only screen and (max-width: 600px) {
-	#contact {
+	#links{
 		display: flex;
 		flex-direction: column;
 		align-items: center;
