@@ -2,16 +2,33 @@
 <html class="theme-light has-navbar-fixed-top" lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<title>amerotz</title>
+		<title>Marco Amerotti</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
 		<script>
 			var active = "peer-reviewed"
+			var tab_groups = [
+				["research", "projects", "music"]
+			]
 			function showElement(name) {
 				document.getElementById(name).classList.toggle('is-hidden')
 				document.getElementById(name + '-tab').classList.toggle('is-active')
-				document.getElementById(active).classList.toggle('is-hidden')
-				document.getElementById(active + '-tab').classList.toggle('is-active')
+
+				for (let i = 0; i < tab_groups.length; i++) {
+					group = tab_groups[i]
+					if (group.includes(name)) {
+						for (let j = 0; j < group.length; j++) {
+							target = group[j]
+							if (target != name){
+								console.log(target)
+								document.getElementById(target).classList.add('is-hidden')
+								document.getElementById(target + '-tab').classList.remove('is-active')
+							}
+						}
+					}
+				}
+				console.log(name)
+				console.log()
 				active = name
 			}
 		</script>
@@ -21,18 +38,16 @@
 			<div class="container">
 				<div class="navbar-brand">
 					<a class="navbar-item" href="https://amerotz.github.io/">
-						<div class="title is-2 has-text-black">amerotz</div>
+						<div class="has-text-black is-flex is-flex-direction-row is-align-items-center">
+							<span class="is-size-3 is-size-5-mobile has-text-weight-bold">Marco Amerotti
+							<span class="is-size-4 is-size-6-mobile has-text-weight-normal"> | Researcher </span></span>
+						</div>
 					</a>
 				</div>
 				<div class="navbar-menu">
-					<div class="navbar-start">
-						<a class="navbar-item" href="https://amerotz.github.io/index.html#research" >Research</a>
-						<a class="navbar-item" href="https://amerotz.github.io/index.html#projects" >Projects</a>
-						<a class="navbar-item" href="https://amerotz.github.io/index.html#music" >Music</a>
-					</div>
 					<div class="navbar-end">
 						<div class="navbar-item">
-							<a class="button" href="mailto:amerotz@proton.me">
+							<a class="button" href="mailto:marco.amerotti@nottingham.ac.uk">
 								<strong>Contact</strong>
 							</a>
 						</div>
@@ -42,265 +57,282 @@
 		</nav>
 		<section class="section is-medium pt-6">
 			<div class="container">
-				<div class="box mb-6">
-					<div id="research" class="title is-3">Research</div>
-					<p class="block">
-						My research focuses on live music performance systems and their evaluation (see <a href="#loeric">LOERIC</a>), practice-led research methodologies, ethical issues and frictions between traditional communities and AI, and artificial entertainment (see <a href="#kspr">KSPR</a>).
-					</p>
-					<p class="block">
-						I am based in Stockholm at KTH Royal Institute of Technology within the <a href="https://musaiclab.wordpress.com/">MUSAiC ERC project</a>.
-					</p>
-					<div class="box">
-						<div class="tabs is-medium">
+				<div class="columns">
+					<div class="column is-one-fifth">
+						<figure class="image">
+							<img class="is-rounded" src="media/marcoamerotti.jpeg">
+						</figure>
+					</div>
+					<div class="column">
+						<h2 class="title is-3 is-size-5-mobile has-text-black is-centered">About</h2>
+						<p class="block">
+							I am a PhD student at the Mixed Reality Lab at the University of Nottingham in the UK Turing AI fellowship <a href="https://somabotics.ac.uk">"Somabotics: Creatively Embodying AI"</a>.
+						</p>
+						<p class="block">
+							My research focuses on live music performance systems and their evaluation (see <a href="#loeric">LOERIC</a>), practice-led research methodologies, ethical issues and frictions between traditional communities and AI, and artificial entertainment (see <a href="#kspr">KSPR</a>).
+						</p>
+						<p class="block">
+							I was previously based in Stockholm at KTH Royal Institute of Technology within the ERC project <a href="https://musaiclab.wordpress.com/">MUSAiC: Music at the Frontiers of Artificial Creativity and Criticism</a>.
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="container">
+				<div class="tabs is-size-4-tablet is-centered">
+					<ul>
+						<li id="research-tab" class="is-active">
+								<a onclick="showElement('research')">
+									Research
+								</a>
+						</li>
+						<li id="projects-tab">
+								<a onclick="showElement('projects')">
+									Projects
+								</a>
+						</li>
+						<li id="music-tab">
+								<a onclick="showElement('music')">
+									Music	
+								</a>
+						</li>
+					</ul>
+				</div>
+				<div id ="research" class="mb-6 container is-max-desktop p-0 px-2">
+					<div class="content">
+						<div id="peer-reviewed">
+							<h3 class="title">Peer-reviewed publications</h3>
 							<ul>
-								<li id="peer-reviewed-tab" class="is-active">
-									<a onclick="showElement('peer-reviewed')">Peer-reviewed publications</a>
+								<li class="block">
+									<strong>Amerotti, M.</strong>, Benford, S., Sturm, B., Vear, C. “A Live Performance Rule System Informed by Irish Traditional Dance Music”. <i>In: Ystad, S., Kronland-Martinet, R., Kitahara, T., Hirata, K., Aramaki, M. (eds) “Music and Sound Generation in the AI Era”. CMMR 2023. Lecture Notes in Computer Science, vol 15236, 2026</i>.
 								</li>
-								<li id="workshops-tab">
-									<a onclick="showElement('workshops')">Workshops</a>
+								<li class="block">
+									<strong>Amerotti, M.</strong>, Benford, S., Sturm, B., Avila, J. M. “The Virtual Session: Synchronizing Multiple Virtual Musicians Simulating an Irish Traditional Music Session”. <i>Proceedings from ICMC'25, the International Computer Music Conference, 2025.</i>
 								</li>
-								<li id="theses-tab">
-									<a onclick="showElement('theses')">Theses</a>
+								<li class="block">
+									Benford, S., <strong>Amerotti, M.</strong>, Sturm, B., Avila, J. M.
+									“Negotiating Autonomy and Trust when Performing  with an AI Musician”. <i>Proceedings from TAS’24, the International Symposium on Trustworthy Autonomous Systems, 2024.</i>
+								</li>
+								<li class="block">
+									Sturm, B., <strong>Amerotti, M.</strong>, Dalmazzo, D., Cros Vila, L., Casini, L., Kanhov, E. “Stochastic Pirate Radio (KSPR): Generative AI applied to simulate community radio”. <i>Proceedings from AIMC’24, the International Conference on AI and Musical Creativity, 2024.</i>
+								</li>
+								<li class="block">
+									<strong>Amerotti, M.</strong>, Sturm, B., Benford, S., Maruri-Aguilar H., Vear, C. “Evaluation of an Interactive Music Performance System in the Context of Irish Traditional Dance Music”. <i>Proceedings from NIME’24, the International Conference on New Interfaces for Musical Expression, 2024.</i> 
+								</li>
+								<li class="block">
+									<strong>Amerotti, M.</strong>, Benford, S., Sturm, B., Vear, C. “A Live Performance Rule System arising from Irish Traditional Dance Music”. <i>Proceedings from CMMR’23, the 16th International Symposium on Computer Music Multidisciplinary Research, 2023.</i>
 								</li>
 							</ul>
 						</div>
-						<div class="content">
-							<div id="peer-reviewed">
-								<ul>
-									<li class="block">
-										<strong>Amerotti, M.</strong>, Benford, S., Sturm, B., Avila, J. M. “The Virtual Session: Synchronizing Multiple Virtual Musicians Simulating an Irish Traditional Music Session”. <i>Proceedings from ICMC'25, the International Computer Music Conference, 2025.</i>
-									</li>
-									<li class="block">
-										Benford, S., <strong>Amerotti, M.</strong>, Sturm, B., Vear, C.
-										“Performing with AI as a Practice-led Methodology for AI Music”. <i>Presentation and performance at AIMS’24, the International Conference on AI Music Studies, 2024.</i>
-									</li>
-									<li class="block">
-										Benford, S., <strong>Amerotti, M.</strong>, Sturm, B., Avila, J. M.
-										“Negotiating Autonomy and Trust when Performing  with an AI Musician”. <i>Proceedings from TAS’24, the International Symposium on Trustworthy Autonomous Systems, 2024.</i>
-									</li>
-									<li class="block">
-										Sturm, B., <strong>Amerotti, M.</strong>, Dalmazzo, D., Cros Vila, L., Casini, L., Kanhov, E. “Stochastic Pirate Radio (KSPR): Generative AI applied to simulate community radio”. <i>Proceedings from AIMC’24, the International Conference on AI and Musical Creativity, 2024.</i>
-									</li>
-									<li class="block">
-										<strong>Amerotti, M.</strong>, Sturm, B., Benford, S., Maruri-Aguilar H., Vear, C. “Evaluation of an Interactive Music Performance System in the Context of Irish Traditional Dance Music”. <i>Proceedings from NIME’24, the International Conference on New Interfaces for Musical Expression, 2024.</i> 
-									</li>
-									<li class="block">
-										<strong>Amerotti, M.</strong>, Benford, S., Sturm, B., Vear, C. “A Live Performance Rule System arising from Irish Traditional Dance Music”. <i>Proceedings from CMMR’23, the 16th International Symposium on Computer Music Multidisciplinary Research, 2023.</i>
-									</li>
-								</ul>
+						<div id="workshops">
+							<h3 class="title pt-4">Workshops & Presentations</h3>
+							<ul>
+								<li class="block">
+									Benford, S., <strong>Amerotti, M.</strong>, Sturm, B., Vear, C.
+									“Performing with AI as a Practice-led Methodology for AI Music”. <i>Presentation and performance at AIMS’24, the International Conference on AI Music Studies, 2024.</i>
+								</li>
+								<li class="block">
+									<strong>Amerotti, M.</strong>, Sturm, B. “Endless generative AI: a practical tutorial”. <i>Presented at AIMC’24, the International Conference on AI and Musical Creativity, 2024</i>.
+								</li>
+								<li class="block">
+									Casini, L., <strong>Amerotti, M.</strong> “Modeling composition and performance of traditional music with AI”.<i>Presented at ICCC’24, the 15th International Conference on Computational Creativity, 2024</i>.
+								</li>
+							</ul>
+						</div>
+						<div id="theses">
+							<h3 class="title pt-4">Theses</h3>
+							<ul>
+								<li class="block">
+									<span><strong>Amerotti, M.</strong> "Modeling interactive performance of traditional music. Challenges and perspectives." <i>Master's Thesis, KTH Royal Institute of Technology (Stockholm, Sweden), 2024</i>.
+								</li>
+								<li class="block">
+									<strong>Amerotti, M.</strong> "Latent representations for traditional music analysis and generation." <i>Tesi di laurea, Alma Mater Studiorum, Università di Bologna (Bologna, Italy), 2022</i>.
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div id="projects" class="is-hidden section p-0 px-2">
+					<div class="grid is-gap-4">
+						<div id="loeric" class="cell">
+							<div class="card">
+								<div class="card-header">
+									<div class="card-header-title">
+										LOERIC
+									</div>
+								</div>
+								<div class="card-image">
+									<figure class="image is-2by1">
+										<img style="object-fit: cover" src="media/loeric.png">
+									</figure>
+								</div>
+								<div class="card-content">
+									A real-time, interactive performance system for Irish traditional dance music.
+								</div>
+								<footer class="card-footer">
+									<div class="card-footer-item">
+										<a href="https://amerotz-loeric.readthedocs.io/en/latest/">Docs</a>
+									</div>
+									<div class="card-footer-item">
+										<a href="https://github.com/amerotz/loeric">Code</a>
+									</div>
+								</footer>
 							</div>
-							<div id="workshops" class="is-hidden">
-								<ul>
-									<li class="block">
-										<strong>Amerotti, M.</strong>, Sturm, B. “Endless generative AI: a practical tutorial”. <i>Presented at AIMC’24, the International Conference on AI and Musical Creativity, 2024</i>.
-									</li>
-									<li class="block">
-										Casini, L., <strong>Amerotti, M.</strong> “Modeling composition and performance of traditional music with AI”.<i>Presented at ICCC’24, the 15th International Conference on Computational Creativity, 2024</i>.
-									</li>
-								</ul>
+						</div>
+						<div id="kspr" class="cell">
+							<div class="card">
+								<div class="card-header">
+									<div class="card-header-title">
+										KSPR: Stochastic Pirate Radio
+									</div>
+								</div>
+								<div class="card-image">
+									<figure class="image is-2by1">
+										<img style="object-fit: cover" src="media/KSPR.png">
+									</figure>
+								</div>
+								<div class="card-content">
+									A completely AI-generated infinite radio station, streaming continuously on YouTube.
+								</div>
+								<footer class="card-footer">
+									<div class="card-footer-item">
+										<a href="https://www.youtube.com/watch?v=c_38XzOnNYY">Listen</a>
+									</div>
+								</footer>
 							</div>
-							<div id="theses" class="is-hidden">
-								<ul>
-									<li class="block">
-										<span><strong>Amerotti, M.</strong> "Modeling interactive performance of traditional music. Challenges and perspectives." <i>Master's Thesis, KTH Royal Institute of Technology (Stockholm, Sweden), 2024</i>.
-									</li>
-									<li class="block">
-										<strong>Amerotti, M.</strong> "Latent representations for traditional music analysis and generation." <i>Tesi di laurea, Alma Mater Studiorum, Università di Bologna (Bologna, Italy), 2022</i>.
-									</li>
-								</ul>
+						</div>
+						<div class="cell">
+							<div class="card">
+								<div class="card-header">
+									<div class="card-header-title">
+										Folktune VAE	
+									</div>
+								</div>
+								<div class="card-image">
+									<figure class="image is-2by1">
+										<img style="object-fit: cover" src="media/folktunevae.png">
+									</figure>
+								</div>
+								<div class="card-content">
+									A variational autoencoder for Irish traditional dance music (second prize at <a alt="The Ai Music Generation Challenge 2022" href="https://github.com/boblsturm/aimusicgenerationchallenge2022">AMGC'22</a>).
+								</div>
+								<footer class="card-footer">
+									<div class="card-footer-item">
+										<a href="https://amerotz.notion.site/Latent-representations-for-traditional-music-analysis-and-generation-48204d6646a74b01a2e6e71b6d2aea0f">Overview</a>
+									</div>
+									<div class="card-footer-item">
+										<a href="https://github.com/amerotz/latent-representations-for-traditional-music-analysis-and-generation">Code</a>
+									</div>
+								</footer>
+							</div>
+						</div>
+						<div class="cell">
+							<div class="card">
+								<div class="card-header">
+									<div class="card-header-title">
+										ABALNN
+									</div>
+								</div>
+								<div class="card-image">
+									<figure class="image is-2by1">
+										<img style="object-fit: cover" src="media/abalnn.png">
+									</figure>
+								</div>
+								<div class="card-content">
+									An experiment in agent-based artificial life with neural networks.
+								</div>
+								<footer class="card-footer">
+									<div class="card-footer-item">
+										<a href="https://amerotz.notion.site/Evolving-Agent-Based-Artificial-Life-with-Neural-Networks-6739ee55f6424dfca31269bec12a5931">Overview</a>
+									</div>
+									<div class="card-footer-item">
+										<a href="https://github.com/amerotz/artificial-life-abalnn">Code</a>
+									</div>
+								</footer>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="box">
-					<div id="projects" class="title is-3">Projects</div>
-					<section class="section p-0 px-2">
-						<div class="grid is-gap-4">
-							<div id="loeric" class="cell">
+				<div id="music" class="mb-6 is-hidden section p-0">
+					<div class="mb-4">
+						<div class="title is-5">Releases</div>
+						<div class="grid is-col-min-10">
+							<div class="cell">
 								<div class="card">
-									<div class="card-header">
-										<div class="card-header-title">
-											LOERIC
-										</div>
-									</div>
 									<div class="card-image">
-										<figure class="image is-2by1">
-											<img style="object-fit: cover" src="media/loeric.png">
+										<figure class="image is-square">
+											<a alt="Listen to 'Exitium' by amerotz on Spotify." href="https://open.spotify.com/album/1vz2R7P12byD59F8fNaEzI">
+												<img src="media/exitium.jpg"/>
+											</a>
 										</figure>
 									</div>
 									<div class="card-content">
-										A real-time, interactive performance system for Irish traditional dance music.
+										<p class="title is-6 my-2">Exitium</p>
+										<p class="subtitle is-6">Dubstep</p>
 									</div>
-									<footer class="card-footer">
-										<div class="card-footer-item">
-											<a href="https://amerotz-loeric.readthedocs.io/en/latest/">Docs</a>
-										</div>
-										<div class="card-footer-item">
-											<a href="https://github.com/amerotz/loeric">Code</a>
-										</div>
-									</footer>
-								</div>
-							</div>
-							<div id="kspr" class="cell">
-								<div class="card">
-									<div class="card-header">
-										<div class="card-header-title">
-											KSPR: Stochastic Pirate Radio
-										</div>
-									</div>
-									<div class="card-image">
-										<figure class="image is-2by1">
-											<img style="object-fit: cover" src="media/KSPR.png">
-										</figure>
-									</div>
-									<div class="card-content">
-										A completely AI-generated infinite radio station, streaming continuously on YouTube.
-									</div>
-									<footer class="card-footer">
-										<div class="card-footer-item">
-											<a href="https://www.youtube.com/watch?v=c_38XzOnNYY">Listen</a>
-										</div>
-									</footer>
 								</div>
 							</div>
 							<div class="cell">
 								<div class="card">
-									<div class="card-header">
-										<div class="card-header-title">
-											Folktune VAE	
-										</div>
-									</div>
 									<div class="card-image">
-										<figure class="image is-2by1">
-											<img style="object-fit: cover" src="media/folktunevae.png">
+										<figure class="image is-square">
+											<a alt="Listen to 'Il Rappresentante' by amerotz on Spotify." href="https://open.spotify.com/album/4MTQUS8ACBI11qrsrKsyVz?si=Hu97TyiaQeGny9cG8MscFA">
+												<img src="media/rappresentante.jpeg"/>
+											</a>
 										</figure>
 									</div>
 									<div class="card-content">
-										A variational autoencoder for Irish traditional dance music (second prize at <a alt="The Ai Music Generation Challenge 2022" href="https://github.com/boblsturm/aimusicgenerationchallenge2022">AMGC'22</a>).
+										<p class="title is-6 my-2">Il Rappresentante</p>
+										<p class="subtitle is-6">Soundtrack</p>
 									</div>
-									<footer class="card-footer">
-										<div class="card-footer-item">
-											<a href="https://amerotz.notion.site/Latent-representations-for-traditional-music-analysis-and-generation-48204d6646a74b01a2e6e71b6d2aea0f">Overview</a>
-										</div>
-										<div class="card-footer-item">
-											<a href="https://github.com/amerotz/latent-representations-for-traditional-music-analysis-and-generation">Code</a>
-										</div>
-									</footer>
 								</div>
 							</div>
 							<div class="cell">
 								<div class="card">
-									<div class="card-header">
-										<div class="card-header-title">
-											ABALNN
-										</div>
-									</div>
 									<div class="card-image">
-										<figure class="image is-2by1">
-											<img style="object-fit: cover" src="media/abalnn.png">
+										<figure class="image is-square">
+											<a alt="Listen to 'Symposium' by amerotz on Spotify." href="https://open.spotify.com/album/06ySIZVoOnzzxBvK2gieSq?si=mzfVALIKQUauOxKcWinWbQ">
+												<img src="media/symposium.png"/>
+											</a>
 										</figure>
 									</div>
 									<div class="card-content">
-										An experiment in agent-based artificial life with neural networks.
+										<p class="title is-6 my-2">Symposium</p>
+										<p class="subtitle is-6">Soundtrack</p>
 									</div>
-									<footer class="card-footer">
-										<div class="card-footer-item">
-											<a href="https://amerotz.notion.site/Evolving-Agent-Based-Artificial-Life-with-Neural-Networks-6739ee55f6424dfca31269bec12a5931">Overview</a>
-										</div>
-										<div class="card-footer-item">
-											<a href="https://github.com/amerotz/artificial-life-abalnn">Code</a>
-										</div>
-									</footer>
 								</div>
 							</div>
-						</div>
-					</section>
-				</div>
-
-				<div class="box mb-6">
-					<div  id="music" class="title is-3">Music</div>
-					<section class="section p-0">
-						<div class="mb-4">
-							<div class="title is-5">Releases</div>
-							<div class="grid is-col-min-10">
-								<div class="cell">
-									<div class="card">
-										<div class="card-image">
-											<figure class="image is-square">
-												<a alt="Listen to 'Exitium' by amerotz on Spotify." href="https://open.spotify.com/album/1vz2R7P12byD59F8fNaEzI">
-													<img src="media/exitium.jpg"/>
-												</a>
-											</figure>
-										</div>
-										<div class="card-content">
-											<p class="title is-6 my-2">Exitium</p>
-											<p class="subtitle is-6">Dubstep</p>
-										</div>
+							<div class="cell">
+								<div class="card">
+									<div class="card-image">
+										<figure class="image is-square">
+											<a alt="Listen to 'Electronic Dance Machine Folk Vol. 1' by amerotz on Spotify." href="https://open.spotify.com/album/3sQYlCa63owIkDj9mOCE8O?si=m9XRq37UTNCqWGIug8ZdJg">
+												<img  src="media/edm.png"/>
+											</a>
+										</figure>
+									</div>
+									<div class="card-content">
+										<p class="title is-6 my-2">EDMF Vol. 1</p>
+										<p class="subtitle is-6">EDM</p>
 									</div>
 								</div>
-								<div class="cell">
-									<div class="card">
-										<div class="card-image">
-											<figure class="image is-square">
-												<a alt="Listen to 'Il Rappresentante' by amerotz on Spotify." href="https://open.spotify.com/album/4MTQUS8ACBI11qrsrKsyVz?si=Hu97TyiaQeGny9cG8MscFA">
-													<img src="media/rappresentante.png"/>
-												</a>
-											</figure>
-										</div>
-										<div class="card-content">
-											<p class="title is-6 my-2">Il Rappresentante</p>
-											<p class="subtitle is-6">Soundtrack</p>
-										</div>
+							</div>
+							<div class="cell">
+								<div class="card">
+									<div class="card-image">
+										<figure class="image is-square">
+											<a alt="Listen to 'Iliad VI' by amerotz on Spotify." href="https://open.spotify.com/album/6v16hpyDAe0CoGEkvFShc1?si=6A9WezA6Q1SATbfFqPNB9w">
+												<img src="media/iliad.jpeg"/>
+											</a>
+										</figure>
 									</div>
-								</div>
-								<div class="cell">
-									<div class="card">
-										<div class="card-image">
-											<figure class="image is-square">
-												<a alt="Listen to 'Symposium' by amerotz on Spotify." href="https://open.spotify.com/album/06ySIZVoOnzzxBvK2gieSq?si=mzfVALIKQUauOxKcWinWbQ">
-													<img src="media/symposium.png"/>
-												</a>
-											</figure>
-										</div>
-										<div class="card-content">
-											<p class="title is-6 my-2">Symposium</p>
-											<p class="subtitle is-6">Soundtrack</p>
-										</div>
-									</div>
-								</div>
-								<div class="cell">
-									<div class="card">
-										<div class="card-image">
-											<figure class="image is-square">
-												<a alt="Listen to 'Electronic Dance Machine Folk Vol. 1' by amerotz on Spotify." href="https://open.spotify.com/album/3sQYlCa63owIkDj9mOCE8O?si=m9XRq37UTNCqWGIug8ZdJg">
-													<img  src="media/edm.png"/>
-												</a>
-											</figure>
-										</div>
-										<div class="card-content">
-											<p class="title is-6 my-2">EDMF Vol. 1</p>
-											<p class="subtitle is-6">EDM</p>
-										</div>
-									</div>
-								</div>
-								<div class="cell">
-									<div class="card">
-										<div class="card-image">
-											<figure class="image is-square">
-												<a alt="Listen to 'Iliad VI' by amerotz on Spotify." href="https://open.spotify.com/album/6v16hpyDAe0CoGEkvFShc1?si=6A9WezA6Q1SATbfFqPNB9w">
-													<img src="media/iliad.png"/>
-												</a>
-											</figure>
-										</div>
-										<div class="card-content">
-											<p class="title is-6 my-2">Iliad VI</p>
-											<p class="subtitle is-6">Soundtrack</p>
-										</div>
+									<div class="card-content">
+										<p class="title is-6 my-2">Iliad VI</p>
+										<p class="subtitle is-6">Soundtrack</p>
 									</div>
 								</div>
 							</div>
 						</div>
-					</section>
+					</div>
 				</div>
 			</div>
 		</section>
