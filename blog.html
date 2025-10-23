@@ -56,10 +56,7 @@
 					if (Array.isArray(data)) {
 						data.forEach(item => {
 							fetch(item.download_url)
-								.then(data => {
-									console.log(data)
-									data.text()
-								})
+								.then(data => data.text())
 								.then(text => {
 									html = marked.parse(text)
 									const container = document.createElement('div');
