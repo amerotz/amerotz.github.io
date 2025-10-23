@@ -64,11 +64,8 @@
 
 			const blogs = document.getElementById('blogs');
 
-			fetch(`blogposts`)
-				.then(response => {
-					console.log(response)
-					response.json()
-				})
+			fetch(`https://api.github.com/repos/amerotz/amerotz.github.io/contents/blogposts`)
+				.then(response => response.json())
 				.then(data => {
 					if (Array.isArray(data)) {
 						data.forEach(item => {
