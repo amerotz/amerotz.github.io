@@ -5,7 +5,7 @@
 		<title>tM - Research Blog</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
-	</head>
+			</head>
 	<body>
 		<nav class="navbar">
 			<div class="container">
@@ -34,88 +34,57 @@
 		</nav>
 		<div class="hero is-primary is-small-with-navbar">
 			<div class="hero-body">
-				<div class="title">
+				<h1 class="title">
 					Embodying and embedding music AI with tradition.
-				</div>
+				</h1>
 			</div>
 		</div>
 		<div class="section">
 			<div class="fixed-grid has-4-cols">
-				<div class="grid">
-					<div class="cell">
-						<div class="card">
-							<div class="card-image">
-								<figure class="image is-4by3">
-									<img
-			 src="https://bulma.io/assets/images/placeholders/1280x960.png"
-	alt="Placeholder image"
- />
-								</figure>
-							</div>
-							<div class="card-content">
-								<div class="media">
-									<div class="media-left">
-										<figure class="image is-48x48">
-											<img
-			   src="https://bulma.io/assets/images/placeholders/96x96.png"
-	  alt="Placeholder image"
-   />
-										</figure>
-									</div>
-									<div class="media-content">
-										<p class="title is-4">John Smith</p>
-										<p class="subtitle is-6">@johnsmith</p>
-									</div>
-								</div>
-
-								<div class="content">
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec
-									iaculis mauris. <a>@bulmaio</a>. <a href="#">#css</a>
-									<a href="#">#responsive</a>
-									<br />
-									<time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class"cell">
-						<div class="card">
-							<div class="card-image">
-								<figure class="image is-4by3">
-									<img
-			 src="https://bulma.io/assets/images/placeholders/1280x960.png"
-	alt="Placeholder image"
- />
-								</figure>
-							</div>
-							<div class="card-content">
-								<div class="media">
-									<div class="media-left">
-										<figure class="image is-48x48">
-											<img
-			   src="https://bulma.io/assets/images/placeholders/96x96.png"
-	  alt="Placeholder image"
-   />
-										</figure>
-									</div>
-									<div class="media-content">
-										<p class="title is-4">John Smith</p>
-										<p class="subtitle is-6">@johnsmith</p>
-									</div>
-								</div>
-
-								<div class="content">
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec
-									iaculis mauris. <a>@bulmaio</a>. <a href="#">#css</a>
-									<a href="#">#responsive</a>
-									<br />
-									<time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-								</div>
-							</div>
-						</div>	
-					</div>
+				<div id="blogs" class="grid">
 				</div>
 			</div>
 		</div>
+		<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+		<script>
+
+			const blogs = document.getElementById('blogs');
+
+			fetch(`https://api.github.com/repos/amerotz/amerotz.github.io/contents/bloposts`)
+				.then(response => response.json())
+				.then(data => {
+					if (Array.isArray(data)) {
+						data.forEach(item => {
+							console.log(item)
+							blogs.innerHTML += createCard("A", "B", "2020-1-1", "")
+						});
+					} else {
+						console.error('Error fetching files', data);
+					}
+				})
+				.catch(error => console.error('Error fetching data from GitHub API:', error));
+
+			function createCard(title, snippet, date, image_path){
+				return `<div class="cell">
+						<div class="card">
+							<div class="card-image">
+								<figure class="image is-4by3">
+									<img src="${image_path}" aria-hidden="true" />
+								</figure>
+							</div>
+							<div class="card-content">
+								<div class="content">
+									<h2 class="">${title}</h2>
+									<p>${snippet}...</p>
+								<div class="has-text-right">
+									<time datetime="${date}">${date}</time>
+								</div>
+								</div>
+							</div>
+						</div>
+					</div>`
+			}
+		</script>
+
 	</body>
 </html>
