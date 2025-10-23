@@ -50,13 +50,25 @@
 
 			const blogs = document.getElementById('blogs');
 
-			fetch(`https://api.github.com/repos/amerotz/amerotz.github.io/contents/bloposts`)
+			fetch(`https://api.github.com/repos/amerotz/amerotz.github.io/contents/blogposts`)
 				.then(response => response.json())
 				.then(data => {
 					if (Array.isArray(data)) {
 						data.forEach(item => {
-							console.log(item)
-							blogs.innerHTML += createCard("A", "B", "2020-1-1", "")
+							fetch(item.download_url)
+								.then(data => {
+									console.log(data)
+									data.text()
+								})
+								.then(text => {
+									html = marked.parse(text)
+									const container = document.createElement('div');
+									container.innerHTML = html;
+									title = container.querySelectorAll("h1")[0].innerText
+									para = container.querySelectorAll("p")[0].innerHTML.slice(0, 195)
+									blogs.innerHTML += createCard(title, para, "2020-1-1", "")
+								}
+								)
 						});
 					} else {
 						console.error('Error fetching files', data);
@@ -75,7 +87,8 @@
 							<div class="card-content">
 								<div class="content">
 									<h2 class="">${title}</h2>
-									<p>${snippet}...</p>
+									<p>${snippet}... <a><b>read</b></a>
+									</p>
 								<div class="has-text-right">
 									<time datetime="${date}">${date}</time>
 								</div>

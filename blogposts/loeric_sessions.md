@@ -1,6 +1,6 @@
-# The LOERIC Sessions
+# The LOERIC Sessions {2025-10-23}
 
-Yesterday, Wednesday 22nd of October 2025, we had the final performance of a six-month artist residency with Rosie and Jamie Rutherford. Over multiple workshops, they have been interacting with the performance system LOERIC and writing new music for it, steering its development and creating the performance we had yesterday.
+Yesterday we had the final performance of a six-month artist residency with Rosie and Jamie Rutherford. Over multiple workshops, they have been interacting with the performance system LOERIC and writing new music for it, steering its development and creating the performance we had yesterday.
 
 The performance was held at the Djanogly Recital Hall at the School of Music (University of Nottingham) and featured three pieces, each exploring a different way of playing with LOERIC.
 
