@@ -96,7 +96,7 @@
 									title = container.querySelectorAll("h1")[0].innerText
 									date = container.querySelectorAll("p")[0].innerHTML
 									para = container.querySelectorAll("p")[1].innerHTML.slice(0, 120)
-									image_path = `media/${item.name.replace(".md", ".png")}`
+									image_path = `media/${item.name.replace(".html", ".png")}`
 									console.log(image_path)
 									blogs.innerHTML = createCard(title, para, date, image_path, item.download_url) + blogs.innerHTML
 								}
