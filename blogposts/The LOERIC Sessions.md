@@ -1,8 +1,10 @@
 # The LOERIC Sessions
 
+![The poster for "The LOERIC Sessions"](media/The LOERIC Sessions.png)
+
 2025-10-23
 
-Yesterday we had the final performance of a six-month artist residency with Rosie and Jamie Rutherford. Over multiple workshops, they have been interacting with the performance system LOERIC and writing new music for it, steering its development and creating the performance we had yesterday.
+Yesterday we had the final performance of a **six-month artist residency with Rosie and Jamie Rutherford**. Over multiple workshops, they have been interacting with the performance system LOERIC and writing new music for it, steering its development and creating the performance we had yesterday.
 
 The performance was held at the Djanogly Recital Hall at the School of Music (University of Nottingham) and featured three pieces, each exploring a different way of playing with LOERIC.
 
@@ -10,7 +12,7 @@ This is what our day looked like and what went through in making this happen.
 
 ## Setting up
 
-I and Adrian collected various pieces of equipment from the Mixed Reality Lab (e.g. mics, cables, monitors, LOERIC laptop, refreshments etc,) and brought them to the veneue in the morning. The first thing we discussed was how to structure the stage and where everything should be positioned. We temporarily settled on Rosie and Jamie at the center of the stage, with me running LOERIC on the side together with other sound tech (huge thanks to Glenn and Michael for that), though we recognized that that was a conversation we needed to have with Rosie and Jamie later on. We also started thinking about the possibility of bringing the audience on stage in a circle for a “cozier” setting, rather than sitting in the back, as we were unsure about attendance.
+I and Adrian collected various pieces of equipment from the Mixed Reality Lab (*e.g.* mics, cables, monitors, LOERIC laptop, refreshments etc,) and brought them to the veneue in the morning. The first thing we discussed was how to structure the stage and where everything should be positioned. We temporarily settled on Rosie and Jamie at the center of the stage, with me running LOERIC on the side together with other sound tech (huge thanks to Glenn and Michael for that), though we recognized that that was a conversation we needed to have with Rosie and Jamie later on. We also started thinking about the possibility of bringing the audience on stage in a circle for a “cozier” setting, rather than sitting in the back, as we were unsure about attendance.
 
 Apart from figuring out how draw the power where we needed without blocking emergency exits, getting LOERIC running and responding to mic input was fairly straightforward without many issues.
 
@@ -44,7 +46,7 @@ Rehearsing Klezempo was a fairly smooth experience: the tempo was controlled thr
 
 ### “Side Winds”
 
-The last piece was the first one we ever tried with Jamie and Rosie, and it explores how LOERIC can play unconventional time signatures (7/8 in this case) and introduce errors and ornamentation. We originally had tried this piece through the “conventional” ways of interacting with LOERIC (e.g. audio input and expression pedals), but during the rehearsal the day before the performance we decided to instead have me controlling LOERIC through the MIDI mixer, with different sliders connected to different parameters, namely dynamics, drones, ornamentation and errors. We decided roughly how the piece was planned and annotated a score I used during the performance. Rehearsing this piece was also very straightforward, as all the tech behaved accordingly and, if we want to speculate, the fact that I was actively controlling LOERIC rather than just monitoring it meant it was more “under control” or any weird behaviour could be associated to my choices during the performance rather than a malfunctioning.
+The last piece was the first one we ever tried with Jamie and Rosie, and it explores how LOERIC can play unconventional time signatures (7/8 in this case) and introduce errors and ornamentation. We originally had tried this piece through the “conventional” ways of interacting with LOERIC (*e.g.* audio input and expression pedals), but during the rehearsal the day before the performance we decided to instead have me controlling LOERIC through the MIDI mixer, with different sliders connected to different parameters, namely dynamics, drones, ornamentation and errors. We decided roughly how the piece was planned and annotated a score I used during the performance. Rehearsing this piece was also very straightforward, as all the tech behaved accordingly and, if we want to speculate, the fact that I was actively controlling LOERIC rather than just monitoring it meant it was more “under control” or any weird behaviour could be associated to my choices during the performance rather than a malfunctioning.
 
 ## Performance time
 

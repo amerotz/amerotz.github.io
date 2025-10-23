@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
 	</head>
-	<body class="has-background-light">
+	<body>
 		<nav class="navbar is-fixed-top is-white">
 			<div class="container">
 				<div id="navMenu" class="navbar-menu">
@@ -21,7 +21,10 @@
 						<a class="navbar-item">
 							About
 						</a>
-						<a class="navbar-item">
+						<a href="#blog" class="navbar-item">
+							Blog
+						</a>
+						<a href="mailto:marco.amerotti@nottingham.ac.uk" class="navbar-item">
 							Contact
 						</a>
 
@@ -34,13 +37,14 @@
 		</nav>
 		<div class="hero is-primary is-medium">
 			<div class="hero-body">
-				<h1 class="title is-1">
-					Embodying and embedding music AI with tradition.
+				<h1 class="title is-2 pb-5">
+					At the intersection of traditional music and AI.
 				</h1>
+				<p class="subtitle is-4"><b>Tradition<i>able</i> Machines</b>  explores the dialogue between traditional music and technology through musical AI, focusing on embodiment, music performance and traditional practices.
 			</div>
 		</div>
-		<div id="current_blog" class="section is-hidden">
-			<div class="container has-background-white">
+		<div id="current_blog" class="section is-hidden has-background-light">
+			<div class="container p-6 has-background-white">
 				<div class="is-flex is-justify-content-end">
 					<button onclick="hideBlog()" class="button">Back</button>
 				</div>
@@ -48,14 +52,28 @@
 				</div>
 			</div>
 		</div>
-		<div class="section">
-			<div class="container">
+		<div id="blog" class="section has-background-white">
+			<div class="container is-fullwidth">
 				<h1 class="title">
 					Blog
 				</h1>
-				<div class="fixed-grid has-4-cols">
-					<div id="blogs" class="grid">
+				<div id="blogs" class="columns" style="overflow-x: auto">
+					<div class="column is-one-quarter">
+						<div class="card ">
+							<div class="card-image">
+								<figure class="image is-square">
+									<img style="object-fit: cover" src="media/tm.png" aria-hidden="true" />
+								</figure>
+							</div>
+							<div class="card-content">
+								<div class="content">
+									<h2 class="">Stay tuned!</h2>
+									<p>More to come soon!</p>
+								</div>
+							</div>
+						</div>
 					</div>
+
 				</div>
 			</div>
 		</div>
@@ -77,10 +95,10 @@
 									container.innerHTML = html;
 									title = container.querySelectorAll("h1")[0].innerText
 									date = container.querySelectorAll("p")[0].innerHTML
-									para = container.querySelectorAll("p")[1].innerHTML.slice(0, 185)
+									para = container.querySelectorAll("p")[1].innerHTML.slice(0, 120)
 									image_path = `media/${item.name.replace(".md", ".png")}`
 									console.log(image_path)
-									blogs.innerHTML += createCard(title, para, date, image_path, item.download_url)
+									blogs.innerHTML = createCard(title, para, date, image_path, item.download_url) + blogs.innerHTML
 								}
 								)
 						});
@@ -100,18 +118,18 @@
 						blog_content.innerHTML =  html
 					}
 					)
-				blog_div.classList.toggle("is-hidden")
+				blog_div.classList.remove("is-hidden")
 
 			}
 			function hideBlog() {
 				const blog_div = document.getElementById("current_blog")
 				const blog_content = document.getElementById("current_blog_content")
-				blog_div.classList.toggle("is-hidden")
+				blog_div.classList.add("is-hidden")
 				blog_content.innerHTML = ""
 			}
 
 			function createCard(title, snippet, date, image_path, blog_path){
-				return `<div class="cell">
+				return `<div class="column is-one-quarter">
 						<div class="card">
 							<div class="card-image">
 								<figure class="image is-square">
