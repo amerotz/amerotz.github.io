@@ -90,7 +90,7 @@
 							fetch(item.download_url)
 								.then(data => data.text())
 								.then(text => {
-									html = marked.parse(text)
+									html = text //marked.parse(text)
 									const container = document.createElement('div');
 									container.innerHTML = html;
 									title = container.querySelectorAll("h1")[0].innerText
