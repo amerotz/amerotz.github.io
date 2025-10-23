@@ -1,7 +1,5 @@
 # The LOERIC Sessions
 
-![The poster for "The LOERIC Sessions"](amerotz.github.io/media/The LOERIC Sessions.png)
-
 2025-10-23
 
 Yesterday we had the final performance of a **six-month artist residency with Rosie and Jamie Rutherford**. Over multiple workshops, they have been interacting with the performance system LOERIC and writing new music for it, steering its development and creating the performance we had yesterday.
