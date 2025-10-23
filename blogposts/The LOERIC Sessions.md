@@ -1,6 +1,6 @@
 # The LOERIC Sessions
 
-![The poster for "The LOERIC Sessions"](media/The LOERIC Sessions.png)
+![The poster for "The LOERIC Sessions"](amerotz.github.io/media/The LOERIC Sessions.png)
 
 2025-10-23
 
