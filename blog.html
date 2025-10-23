@@ -61,9 +61,12 @@
 									html = marked.parse(text)
 									const container = document.createElement('div');
 									container.innerHTML = html;
-									title = container.querySelectorAll("h1")[0].innerText
-									para = container.querySelectorAll("p")[0].innerHTML.slice(0, 195)
-									blogs.innerHTML += createCard(title, para, "2020-1-1", "")
+									title = container.querySelectorAll("h1")[0]
+									date = container.querySelectorAll("p")[0].innerHTML
+									para = container.querySelectorAll("p")[1].innerHTML.slice(0, 195)
+									image_path = `media/${item.name.replace(".md", ".png")}`
+									console.log(image_path)
+									blogs.innerHTML += createCard(title, para, date, image_path)
 								}
 								)
 						});
