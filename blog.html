@@ -5,9 +5,9 @@
 		<title>tM - Research Blog</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
-			</head>
-	<body>
-		<nav class="navbar">
+	</head>
+	<body class="has-background-light">
+		<nav class="navbar is-fixed-top is-white">
 			<div class="container">
 				<div id="navMenu" class="navbar-menu">
 					<div class="navbar-start">
@@ -32,16 +32,30 @@
 				</div>
 			</div>
 		</nav>
-		<div class="hero is-primary is-small-with-navbar">
+		<div class="hero is-primary is-medium">
 			<div class="hero-body">
-				<h1 class="title">
+				<h1 class="title is-1">
 					Embodying and embedding music AI with tradition.
 				</h1>
 			</div>
 		</div>
+		<div id="current_blog" class="section is-hidden">
+			<div class="container has-background-white">
+				<div class="is-flex is-justify-content-end">
+					<button onclick="hideBlog()" class="button">Back</button>
+				</div>
+				<div class="content" id="current_blog_content">
+				</div>
+			</div>
+		</div>
 		<div class="section">
-			<div class="fixed-grid has-4-cols">
-				<div id="blogs" class="grid">
+			<div class="container">
+				<h1 class="title">
+					Blog
+				</h1>
+				<div class="fixed-grid has-4-cols">
+					<div id="blogs" class="grid">
+					</div>
 				</div>
 			</div>
 		</div>
@@ -50,7 +64,7 @@
 
 			const blogs = document.getElementById('blogs');
 
-			fetch(`https://api.github.com/repos/amerotz/amerotz.github.io/contents/blogposts`)
+			fetch(`blogposts`)
 				.then(response => response.json())
 				.then(data => {
 					if (Array.isArray(data)) {
@@ -61,12 +75,12 @@
 									html = marked.parse(text)
 									const container = document.createElement('div');
 									container.innerHTML = html;
-									title = container.querySelectorAll("h1")[0]
+									title = container.querySelectorAll("h1")[0].innerText
 									date = container.querySelectorAll("p")[0].innerHTML
-									para = container.querySelectorAll("p")[1].innerHTML.slice(0, 195)
+									para = container.querySelectorAll("p")[1].innerHTML.slice(0, 185)
 									image_path = `media/${item.name.replace(".md", ".png")}`
 									console.log(image_path)
-									blogs.innerHTML += createCard(title, para, date, image_path)
+									blogs.innerHTML += createCard(title, para, date, image_path, item.download_url)
 								}
 								)
 						});
@@ -76,18 +90,38 @@
 				})
 				.catch(error => console.error('Error fetching data from GitHub API:', error));
 
-			function createCard(title, snippet, date, image_path){
+			function showBlog(blog_path){
+				const blog_div = document.getElementById("current_blog")
+				const blog_content = document.getElementById("current_blog_content")
+				fetch(blog_path)
+					.then(data => data.text())
+					.then(text => {
+						html = marked.parse(text)
+						blog_content.innerHTML =  html
+					}
+					)
+				blog_div.classList.toggle("is-hidden")
+
+			}
+			function hideBlog() {
+				const blog_div = document.getElementById("current_blog")
+				const blog_content = document.getElementById("current_blog_content")
+				blog_div.classList.toggle("is-hidden")
+				blog_content.innerHTML = ""
+			}
+
+			function createCard(title, snippet, date, image_path, blog_path){
 				return `<div class="cell">
 						<div class="card">
 							<div class="card-image">
-								<figure class="image is-4by3">
-									<img src="${image_path}" aria-hidden="true" />
+								<figure class="image is-square">
+									<img style="object-fit: cover" src="${image_path}" aria-hidden="true" />
 								</figure>
 							</div>
 							<div class="card-content">
 								<div class="content">
 									<h2 class="">${title}</h2>
-									<p>${snippet}... <a><b>read</b></a>
+									<p>${snippet}... <a href="#current_blog" onclick="showBlog('${blog_path}')"><b>read</b></a>
 									</p>
 								<div class="has-text-right">
 									<time datetime="${date}">${date}</time>
