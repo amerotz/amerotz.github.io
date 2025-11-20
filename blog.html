@@ -2,93 +2,153 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<title>tM - Research Blog</title>
+		<title>Marco Amerotti - Research Blog</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
 		<style>
-.hero.has-background {
-	position: relative;
-	overflow: hidden;
+.hero {
+	position: relative
 }
-		.hero-background {
-			position: absolute;
-			object-fit: cover;
-			object-position: center center;
-			width: 100%;
-			height: 100%;
-		}
-		.hero-background.is-transparent {
-			opacity: 0.3;
-		}
-		</style>
+.hero-body {
+	z-index: 1
+}
+.hero-background {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+	opacity: 0.5;
+	height: auto;
+	width: auto;
+	background-position: center;
+}
+					/* ===========================
+   COOL FADE IN
+   =========================== */
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95) rotateX(15deg);
+    filter: blur(8px);
+	max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-4px) scale(1.02) rotateX(0deg);
+    filter: blur(0px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotateX(0deg);
+    padding-top: 3rem;  /* Bulma default */
+    padding-bottom: 3rem; /* Bulma default */
+    max-height: 5000px; /* safely larger than your section */
+  }
+}
+
+.fade-in {
+  animation: fade-in 0.6s cubic-bezier(.22, .61, .36, 1) forwards;
+  transform-origin: top;
+  perspective: 800px;
+}
+
+
+/* ===========================
+   COOL FADE OUT
+   =========================== */
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0px);
+    max-height: 5000px; /* safely larger than your section */
+    padding-top: 3rem;  /* Bulma default */
+    padding-bottom: 3rem; /* Bulma default */
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+    filter: blur(6px);
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+.fade-out {
+  animation: fade-out 0.55s cubic-bezier(.4, 0, .2, 1) forwards;
+  overflow: hidden;
+  will-change: opacity, transform, max-height, filter;
+}
+
+
+</style>
 	</head>
-	<body>
-		<nav class="navbar is-fixed-top is-white">
+	<body class="has-navbar-fixed-top">
+		<nav class="navbar is-fixed-top is-align-content-center">
 			<div class="container">
 				<div id="navMenu" class="navbar-menu">
 					<div class="navbar-start">
 						<div class="navbar-brand">
 							<div class="navbar-item">
-								<img src="media/logo.png" alt="Traditionable Machines Logo" />
+								<a href="index.html" style="color: black">
+									<span class="is-size-3 is-size-6-mobile has-text-weight-bold">Marco Amerotti</span>
+									<span class="is-size-4 is-size-6-mobile has-text-weight-normal"> | Research Blog </span>
+								</a>
 							</div>
 						</div>
 					</div>
 					<div class="navbar-end">
-						<a class="navbar-item">
-							About
-						</a>
-						<a href="#blog" class="navbar-item">
-							Blog
-						</a>
-						<a href="mailto:marco.amerotti@nottingham.ac.uk" class="navbar-item">
-							Contact
-						</a>
 
 						<a class="navbar-item" href="https://www.somabotics.ac.uk/">
-							Somabotics
+							<strong>SOMABOTICS</strong>
+						</a>
+						<a href="mailto:marco.amerotti@nottingham.ac.uk" class="navbar-item">
+							<strong>Contact</strong>
 						</a>
 					</div>
 				</div>
 			</div>
 		</nav>
-		<div class="hero is-primary is-medium">
-			<div class="hero-body">
-				<h1 class="title is-2 pb-5">
-					At the intersection of traditional music and AI.
-				</h1>
-				<p class="subtitle is-4"><b>Tradition<i>able</i> Machines</b>  explores the dialogue between traditional music and technology through musical AI, focusing on embodiment, music performance and traditional practices.
+		<div class="hero is-dark is-small p-6">
+			<div class="hero-body has-text-centered">
+				<h1 class="title is-3 pb-4">Welcome!</h1>
+				<p class="subtitle is-4">Here I reflect on my research projects and academic experience.
 			</div>
 		</div>
 		<div id="current_blog" class="section is-hidden has-background-light">
-			<div class="container p-6 has-background-white box">
+			<div class="container has-background-white box">
 				<div class="is-flex is-justify-content-end">
 					<button onclick="hideBlog()" class="button">Back</button>
 				</div>
-				<div class="p-5" id="current_blog_content">
+				<div class="px-6 py-2" id="current_blog_content">
 				</div>
 			</div>
 		</div>
 		<div id="blog" class="section has-background-white">
 			<div class="container is-fullwidth">
-				<h1 class="title">
-					Blog
-				</h1>
 				<div id="blogs" class="columns" style="overflow-x: auto">
-					<div class="column is-one-quarter">
-						<div class="card ">
-							<div class="card-image">
-								<figure class="image is-square">
-									<img style="object-fit: cover" src="media/tm.png" aria-hidden="true" />
-								</figure>
-							</div>
-							<div class="card-content">
-								<div class="content">
-									<h2 class="">Stay tuned!</h2>
-									<p>More to come soon!</p>
-								</div>
-							</div>
-						</div>
-					</div>
+					<!--
+		 <div class="column is-one-quarter">
+		 <div class="card ">
+		 <div class="card-image">
+		 <figure class="image is-square">
+		 <img style="object-fit: cover" src="media/tm.png" aria-hidden="true" />
+		 </figure>
+		 </div>
+		 <div class="card-content">
+		 <div class="content">
+		 <h2 class="">Stay tuned!</h2>
+		 <p>More to come soon!</p>
+		 </div>
+		 </div>
+		 </div>
+		 </div>
+					-->
 
 				</div>
 			</div>
@@ -104,22 +164,22 @@
 					const parser = new DOMParser();
 					const doc = parser.parseFromString(html, 'text/html');
 					const data = doc.querySelectorAll('a');
-					data.forEach(item => {
-						link = `blogposts/${item.getAttribute("href")}`
-						fetch(link)
-							.then(data => data.text())
-							.then(text => {
-								html = text //marked.parse(text)
-								const container = document.createElement('div');
-								container.innerHTML = html;
-								title = container.querySelectorAll("h1")[0].innerText
-								date = container.querySelectorAll("p")[0].innerHTML
-								para = container.querySelectorAll("p")[1].innerHTML.slice(0, 120)
-								image_path = `media/${item.getAttribute("href").replace(".html", ".png")}`
-								blogs.innerHTML = createCard(title, para, date, image_path, link) + blogs.innerHTML
-							}
-							)
-					});
+					data.forEach(item => 
+						fetch(`blogposts/${item.getAttribute("href")}`)
+						.then(data => data.text())
+						.then(text => {
+							html = text //marked.parse(text)
+							const container = document.createElement('div');
+							container.innerHTML = html;
+							title = container.querySelectorAll("h1")[0].innerText
+							date = container.querySelectorAll("p")[0].innerHTML
+							para = container.querySelectorAll("p")[1].innerHTML.slice(0, 120)
+							image_path = `media/${item.getAttribute("href").replace(".html", ".png")}`
+							link = `blogposts/${item.getAttribute("href")}`
+							console.log(title, link)
+							blogs.innerHTML = createCard(title, para, date, image_path, link) + blogs.innerHTML
+						})
+					)
 				})
 				.catch(error => console.error('Error fetching data from GitHub API:', error));
 
@@ -134,13 +194,20 @@
 					}
 					)
 				blog_div.classList.remove("is-hidden")
+				blog_div.classList.remove("fade-out")
+				blog_div.classList.add("fade-in")
 
 			}
 			function hideBlog() {
 				const blog_div = document.getElementById("current_blog")
 				const blog_content = document.getElementById("current_blog_content")
-				blog_div.classList.add("is-hidden")
-				blog_content.innerHTML = ""
+				blog_div.classList.remove("fade-in")
+				blog_div.classList.add("fade-out")
+				const duration = 600; // match CSS animation (0.5s)
+				setTimeout(() => {
+					blog_div.classList.add('is-hidden');
+					blog_content.innerHTML = ""
+				}, duration);
 			}
 
 			function createCard(title, snippet, date, image_path, blog_path){
