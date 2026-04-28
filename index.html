@@ -1,332 +1,1365 @@
-<!DOCTYPE html> 
-<html class="theme-light has-navbar-fixed-top" lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<title>Marco Amerotti</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
-		<script>
-			var active = "research"
-			var tab_groups = [
-				["research", "projects", "music"]
-			]
-			function showElement(name) {
-				if (name == active) return
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Marco Amerotti — Researcher</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=IM+Fell+English:ital@0;1&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-				document.getElementById(name).classList.toggle('is-hidden')
-				document.getElementById(name + '-tab').classList.toggle('is-active')
+:root {
+  --serif:   'EB Garamond', Georgia, serif;
+  --display: 'IM Fell English', Georgia, serif;
+  --mono:    'Courier Prime', 'Courier New', monospace;
 
-				for (let i = 0; i < tab_groups.length; i++) {
-					group = tab_groups[i]
-					if (group.includes(name)) {
-						for (let j = 0; j < group.length; j++) {
-							target = group[j]
-							if (target != name){
-								document.getElementById(target).classList.add('is-hidden')
-								document.getElementById(target + '-tab').classList.remove('is-active')
-							}
-						}
-					}
-				}
-				active = name
-			}
-		</script>
-	</head>
-	<body>
-		<nav class="navbar is-fixed-top is-align-content-center">
-			<div class="container">
-				<div class="navbar-brand">
-					<a class="navbar-item" href="index.html">
-						<div class="has-text-black is-flex is-flex-direction-row is-align-items-center">
-							<span class="is-size-3 is-size-5-mobile has-text-weight-bold">Marco Amerotti
-								<span class="is-size-4 is-size-6-mobile has-text-weight-normal"> | Researcher </span></span>
-						</div>
-					</a>
-				</div>
-				<div class="navbar-end">
-					<!--
-					<a class="navbar-item" href="blog.html">
-						<strong>Blog</strong>
-					</a>
-					-->
-					<a class="navbar-item" href="mailto:marco.amerotti@nottingham.ac.uk">
-						<strong>Contact</strong>
-					</a>
-				</div>
-			</div>
-		</nav>
-		<section class="section is-medium pt-6">
-			<div class="container">
-				<div class="columns">
-					<div class="column is-one-fifth">
-						<figure class="image">
-							<img class="is-rounded" src="media/marcoamerotti.jpeg">
-						</figure>
-					</div>
-					<div class="column">
-						<h2 class="title is-3 is-size-5-mobile has-text-black is-centered">About</h2>
-						<p class="block">
-							I am a PhD student at the Mixed Reality Lab at the University of Nottingham in the UK Turing AI fellowship <a href="https://somabotics.ac.uk">"Somabotics: Creatively Embodying AI"</a>. My research focuses on finding ways of embodying co-creative musical AI, with a special attention to music practices and traditional music. Within Somabotics, I am responsible for the <a href="https://www.somabotics.ac.uk/project/intelligent-instruments/">Traditionable Machines project</a>.
-						<p class="block">
-							I was previously based in Stockholm at KTH Royal Institute of Technology within the ERC project <a href="https://musaiclab.wordpress.com/">MUSAiC: Music at the Frontiers of Artificial Creativity and Criticism</a>, where my research focused on live music performance systems and their evaluation (see <a href="#loeric">LOERIC</a>), practice-led research methodologies, ethical issues and frictions between traditional communities and AI, and artificial entertainment (see <a href="#kspr">KSPR</a>). I obtained a Bachelor in Philosophy from the University of Bologna in 2025, a Master of Science in Computer Science from KTH Royal Institute of Technology in 2024, and Bachelor in Computer Science from the University of Bologna in 2022.
-						</p>
-						<p class="block">
-						</p>
-					</div>
-				</div>
-			</div>
-			<div class="container">
-				<div class="tabs is-size-4-tablet is-centered">
-					<ul>
-						<li id="research-tab" class="is-active">
-							<a onclick="showElement('research')">
-								Research
-							</a>
-						</li>
-						<li id="projects-tab">
-							<a onclick="showElement('projects')">
-								Projects
-							</a>
-						</li>
-						<li id="music-tab">
-							<a onclick="showElement('music')">
-								Music	
-							</a>
-						</li>
-					</ul>
-				</div>
-				<div id ="research" class="mb-6 container is-max-desktop p-0 px-2">
-					<div class="content">
-						<div id="peer-reviewed">
-							<h4 class="subtitle has-text-centered">2026</h4>
-							<ul>
-								<li class="block">
-									<strong>Amerotti, M.</strong> “Small data: situatedness, thickness and the ontological turn”. <i>Presentation at AIMS’26, the International Conference on AI Music Studies, 2026 (forthcoming).</i>
-								</li>
-								<li class="block">
-									<strong>Amerotti, M.</strong> “TradJockey: Live Remixing a Performance System for Traditional Music”. <i>In:  Woodward, K., Falcon-Caro, A., Ramchurn, R., Benford, S. (eds) “Creative AI for Live Interactive Performanes workshop 2026”. CLIP 2026. Communications in Computer and Information Science, vol 2865, 2026</i>.
-								</li>
-								<li class="block"> <strong>Amerotti, M.</strong>, Benford, S., Sturm, B., Vear, C. “A Live Performance Rule System Informed by Irish Traditional Dance Music”. <i>In: Ystad, S., Kronland-Martinet, R., Kitahara, T., Hirata, K., Aramaki, M. (eds) “Music and Sound Generation in the AI Era”. CMMR 2023. Lecture Notes in Computer Science, vol 15236, 2026</i>. </li>
-							</ul>
-							<h4 class="subtitle has-text-centered">2025</h4>
-							<ul>
-								<li class="block">
-									<strong>Amerotti, M.</strong> "On the intelligence and creativity of an artificial intelligence system for traditional music." <i>Tesi di laurea in Filosofia, Alma Mater Studiorum, Università di Bologna (Bologna, Italy), 2025</i>.
-								</li>
-								<li class="block">
-									<strong>Amerotti, M.</strong>, Benford, S., Sturm, B., Avila, J. M. “The Virtual Session: Synchronizing Multiple Virtual Musicians Simulating an Irish Traditional Music Session”. <i>Proceedings from ICMC'25, the International Computer Music Conference, 2025.</i>
-								</li>
-							</ul>
-							<h4 class="subtitle has-text-centered">2024</h4>
-							<ul>
-								<li class="block"> Benford, S., <strong>Amerotti, M.</strong>, Sturm, B., Vear, C. “Performing with AI as a Practice-led Methodology for AI Music”. <i>Presentation and performance at AIMS’24, the International Conference on AI Music Studies, 2024.</i> </li>
-								<li class="block"> Benford, S., <strong>Amerotti, M.</strong>, Sturm, B., Avila, J. M.  “Negotiating Autonomy and Trust when Performing  with an AI Musician”. <i>Proceedings from TAS’24, the International Symposium on Trustworthy Autonomous Systems, 2024.</i> </li>
+  --ink:       #1c1810;
+  --ink-mid:   #3d3529;
+  --ink-muted: #7a6e61;
 
-								<li class="block"> Sturm, B., <strong>Amerotti, M.</strong>, Dalmazzo, D., Cros Vila, L., Casini, L., Kanhov, E. “Stochastic Pirate Radio (KSPR): Generative AI applied to simulate community radio”. <i>Proceedings from AIMC’24, the International Conference on AI and Musical Creativity, 2024.</i> </li>
-								<li class="block"><strong>Amerotti, M.</strong>, Sturm, B., Benford, S., Maruri-Aguilar H., Vear, C. “Evaluation of an Interactive Music Performance System in the Context of Irish Traditional Dance Music”. <i>Proceedings from NIME’24, the International Conference on New Interfaces for Musical Expression, 2024.</i></li>
-								<li class="block"> <strong>Amerotti, M.</strong>, Sturm, B. “Endless generative AI: a practical tutorial”. <i>Workshop at AIMC’24, the International Conference on AI and Musical Creativity, 2024</i>. </li>
-								<li class="block"> Casini, L., <strong>Amerotti, M.</strong> “Modeling composition and performance of traditional music with AI”. <i>Workshop at ICCC’24, the 15th International Conference on Computational Creativity, 2024</i>.  </li>
-								<li class="block"> <span><strong>Amerotti, M.</strong> "Modeling interactive performance of traditional music. Challenges and perspectives." <i>Master's Thesis in Computer Science, KTH Royal Institute of Technology (Stockholm, Sweden), 2024</i>.  </li>
-							</ul>
-							<h4 class="subtitle has-text-centered">2023</h4>
-							<ul>
-								<li class="block">
-									<strong>Amerotti, M.</strong>, Benford, S., Sturm, B., Vear, C. “A Live Performance Rule System arising from Irish Traditional Dance Music”. <i>Proceedings from CMMR’23, the 16th International Symposium on Computer Music Multidisciplinary Research, 2023.</i>
-								</li>
-							</ul>
-							<h4 class="subtitle has-text-centered">2022</h4>
-							<ul>
-								<li class="block">
-									<strong>Amerotti, M.</strong> "Latent representations for traditional music analysis and generation." <i>Tesi di laurea in Informatica, Alma Mater Studiorum, Università di Bologna (Bologna, Italy), 2022</i>.
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div id="projects" class="is-hidden section p-0 px-2">
-					<div class="grid is-gap-4">
-						<div id="loeric" class="cell">
-							<div class="card">
-								<div class="card-header">
-									<div class="card-header-title">
-										LOERIC
-									</div>
-								</div>
-								<div class="card-image">
-									<figure class="image is-2by1">
-										<img style="object-fit: cover" src="media/loeric.png">
-									</figure>
-								</div>
-								<div class="card-content">
-									A real-time, interactive performance system for Irish traditional dance music.
-								</div>
-								<footer class="card-footer">
-									<div class="card-footer-item">
-										<a href="https://amerotz-loeric.readthedocs.io/en/latest/">Docs</a>
-									</div>
-									<div class="card-footer-item">
-										<a href="https://github.com/amerotz/loeric">Code</a>
-									</div>
-								</footer>
-							</div>
-						</div>
-						<div id="kspr" class="cell">
-							<div class="card">
-								<div class="card-header">
-									<div class="card-header-title">
-										KSPR: Stochastic Pirate Radio
-									</div>
-								</div>
-								<div class="card-image">
-									<figure class="image is-2by1">
-										<img style="object-fit: cover" src="media/KSPR.png">
-									</figure>
-								</div>
-								<div class="card-content">
-									A completely AI-generated infinite radio station, streaming continuously on YouTube.
-								</div>
-								<footer class="card-footer">
-									<div class="card-footer-item">
-										<a href="https://www.youtube.com/watch?v=c_38XzOnNYY">Listen</a>
-									</div>
-								</footer>
-							</div>
-						</div>
-						<div class="cell">
-							<div class="card">
-								<div class="card-header">
-									<div class="card-header-title">
-										Folktune VAE	
-									</div>
-								</div>
-								<div class="card-image">
-									<figure class="image is-2by1">
-										<img style="object-fit: cover" src="media/folktunevae.png">
-									</figure>
-								</div>
-								<div class="card-content">
-									A variational autoencoder for Irish traditional dance music (second prize at <a alt="The Ai Music Generation Challenge 2022" href="https://github.com/boblsturm/aimusicgenerationchallenge2022">AMGC'22</a>).
-								</div>
-								<footer class="card-footer">
-									<div class="card-footer-item">
-										<a href="https://amerotz.notion.site/Latent-representations-for-traditional-music-analysis-and-generation-48204d6646a74b01a2e6e71b6d2aea0f">Overview</a>
-									</div>
-									<div class="card-footer-item">
-										<a href="https://github.com/amerotz/latent-representations-for-traditional-music-analysis-and-generation">Code</a>
-									</div>
-								</footer>
-							</div>
-						</div>
-						<div class="cell">
-							<div class="card">
-								<div class="card-header">
-									<div class="card-header-title">
-										ABALNN
-									</div>
-								</div>
-								<div class="card-image">
-									<figure class="image is-2by1">
-										<img style="object-fit: cover" src="media/abalnn.png">
-									</figure>
-								</div>
-								<div class="card-content">
-									An experiment in agent-based artificial life with neural networks.
-								</div>
-								<footer class="card-footer">
-									<div class="card-footer-item">
-										<a href="https://amerotz.notion.site/Evolving-Agent-Based-Artificial-Life-with-Neural-Networks-6739ee55f6424dfca31269bec12a5931">Overview</a>
-									</div>
-									<div class="card-footer-item">
-										<a href="https://github.com/amerotz/artificial-life-abalnn">Code</a>
-									</div>
-								</footer>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div id="music" class="mb-6 is-hidden section p-0">
-					<div class="mb-4">
-						<div class="title is-5">Releases</div>
-						<div class="grid is-col-min-10">
-							<div class="cell">
-								<div class="card">
-									<div class="card-image">
-										<figure class="image is-square">
-											<a alt="Listen to 'Exitium' by amerotz on Spotify." href="https://open.spotify.com/album/1vz2R7P12byD59F8fNaEzI">
-												<img src="media/exitium.jpg"/>
-											</a>
-										</figure>
-									</div>
-									<div class="card-content">
-										<p class="title is-6 my-2">Exitium</p>
-										<p class="subtitle is-6">Dubstep</p>
-									</div>
-								</div>
-							</div>
-							<div class="cell">
-								<div class="card">
-									<div class="card-image">
-										<figure class="image is-square">
-											<a alt="Listen to 'Il Rappresentante' by amerotz on Spotify." href="https://open.spotify.com/album/4MTQUS8ACBI11qrsrKsyVz?si=Hu97TyiaQeGny9cG8MscFA">
-												<img src="media/rappresentante.jpeg"/>
-											</a>
-										</figure>
-									</div>
-									<div class="card-content">
-										<p class="title is-6 my-2">Il Rappresentante</p>
-										<p class="subtitle is-6">Soundtrack</p>
-									</div>
-								</div>
-							</div>
-							<div class="cell">
-								<div class="card">
-									<div class="card-image">
-										<figure class="image is-square">
-											<a alt="Listen to 'Symposium' by amerotz on Spotify." href="https://open.spotify.com/album/06ySIZVoOnzzxBvK2gieSq?si=mzfVALIKQUauOxKcWinWbQ">
-												<img src="media/symposium.png"/>
-											</a>
-										</figure>
-									</div>
-									<div class="card-content">
-										<p class="title is-6 my-2">Symposium</p>
-										<p class="subtitle is-6">Soundtrack</p>
-									</div>
-								</div>
-							</div>
-							<div class="cell">
-								<div class="card">
-									<div class="card-image">
-										<figure class="image is-square">
-											<a alt="Listen to 'Electronic Dance Machine Folk Vol. 1' by amerotz on Spotify." href="https://open.spotify.com/album/3sQYlCa63owIkDj9mOCE8O?si=m9XRq37UTNCqWGIug8ZdJg">
-												<img  src="media/edm.png"/>
-											</a>
-										</figure>
-									</div>
-									<div class="card-content">
-										<p class="title is-6 my-2">EDMF Vol. 1</p>
-										<p class="subtitle is-6">EDM</p>
-									</div>
-								</div>
-							</div>
-							<div class="cell">
-								<div class="card">
-									<div class="card-image">
-										<figure class="image is-square">
-											<a alt="Listen to 'Iliad VI' by amerotz on Spotify." href="https://open.spotify.com/album/6v16hpyDAe0CoGEkvFShc1?si=6A9WezA6Q1SATbfFqPNB9w">
-												<img src="media/iliad.jpeg"/>
-											</a>
-										</figure>
-									</div>
-									<div class="card-content">
-										<p class="title is-6 my-2">Iliad VI</p>
-										<p class="subtitle is-6">Soundtrack</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-	</body>
+  --paper:      #f5f2eb;
+  --paper-warm: #ede8dc;
+  --paper-card: #f9f7f2;
+
+  --accent:       #956b20;
+  --accent-light: rgba(149, 107, 32, 0.10);
+  --accent-alt:   #2c5166;
+
+  --border:       #cfc4ae;
+  --border-light: #e0d9cc;
+
+  --tag-paper-bg: #1b3d5c;  --tag-paper-fg: #c8e0f0;
+  --tag-perf-bg:  #7a1f08;  --tag-perf-fg:  #fad4c8;
+  --tag-talk-bg:  #5a4200;  --tag-talk-fg:  #f5dfa0;
+
+  --nav-h: 52px;
+  --max: 960px;
+  --content-max: 820px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink:       #ede8dc;
+    --ink-mid:   #c8bfb0;
+    --ink-muted: #998e80;
+
+    --paper:      #12110e;
+    --paper-warm: #1a1814;
+    --paper-card: #1e1c18;
+
+    --accent:       #c49a3a;
+    --accent-light: rgba(196, 154, 58, 0.11);
+    --accent-alt:   #7ab2cc;
+
+    --border:       #2e2a22;
+    --border-light: #252118;
+
+    --tag-paper-bg: #0f2a40;  --tag-paper-fg: #8ecae6;
+    --tag-perf-bg:  #3d0e02;  --tag-perf-fg:  #f4a58a;
+    --tag-talk-bg:  #2e2000;  --tag-talk-fg:  #f0cc6a;
+  }
+}
+
+/* ─── BASE ──────────────────────────────────────────── */
+
+html { font-size: 17px; scroll-behavior: smooth; }
+
+body {
+  font-family: var(--serif);
+  background-color: var(--paper);
+  color: var(--ink);
+  line-height: 1.75;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+@media (prefers-color-scheme: dark) {
+  body { font-size: 18px; font-weight: 500; }
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background: radial-gradient(ellipse at center, transparent 55%, rgba(0,0,0,0.07) 100%);
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.032;
+  background-image: repeating-linear-gradient(0deg, rgba(0,0,0,1), rgba(0,0,0,1) 1px, transparent 1px, transparent 4px);
+  mask-image: radial-gradient(ellipse at center, transparent 40%, black 80%);
+}
+
+/* ─── LINKS ─────────────────────────────────────────── */
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0 96%;
+  background-size: 0% 1px;
+  background-repeat: no-repeat;
+  transition: background-size 0.2s ease, color 0.15s;
+}
+a:hover { background-size: 100% 1px; }
+
+a.entry-title {
+  color: var(--ink);
+  font-style: italic;
+  background-image: linear-gradient(var(--ink-muted), var(--ink-muted));
+  width: fit-content;
+}
+a.entry-title:hover { color: var(--ink); }
+
+/* ─── NAV ───────────────────────────────────────────── */
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  padding: 0 2rem;
+  border-bottom: 1px solid var(--border);
+  background: color-mix(in srgb, var(--paper) 94%, transparent);
+  backdrop-filter: blur(8px);
+}
+.nav-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  height: var(--nav-h);
+}
+.nav-name {
+  font-family: var(--display);
+  font-size: 1.1rem;
+  color: var(--ink);
+  font-weight: 400;
+  white-space: nowrap;
+}
+.nav-name span {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--ink-muted);
+  margin-left: 0.4rem;
+  letter-spacing: 0.05em;
+}
+.nav-tabs {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+.nav-tab-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--display);
+  font-size: 0.95rem;
+  color: var(--ink-muted);
+  padding: 0 1rem;
+  height: var(--nav-h);
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: color 0.15s, border-color 0.15s;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+.nav-tab-btn:hover { color: var(--ink); }
+.nav-tab-btn[aria-selected="true"] {
+  color: var(--ink);
+  border-bottom-color: var(--accent);
+}
+.nav-right {
+  display: flex;
+  justify-content: flex-end;
+}
+.nav-contact {
+  font-family: var(--mono);
+  font-size: 0.73rem;
+  color: var(--ink-muted);
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 640px) {
+  .nav-inner { grid-template-columns: 1fr auto; }
+  .nav-tabs { display: none; }
+  .nav-right { display: none; }
+}
+
+/* ─── ABOVE-THE-FOLD WRAPPER ────────────────────────── */
+/* Everything visible on first load lives here */
+
+.above-fold {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 1.75rem 2rem 0;
+  /* Aim to fill one viewport minus the nav */
+  min-height: calc(100svh - var(--nav-h));
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* ─── HERO ──────────────────────────────────────────── */
+
+.hero {
+  display: grid;
+  grid-template-columns: 148px 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+@media (max-width: 600px) {
+  .hero { grid-template-columns: 1fr; gap: 1.25rem; }
+}
+
+/* Left column: photo + degree pills stacked */
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+.hero-photo {
+  width: 148px;
+  height: 148px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--border);
+  display: block;
+  filter: sepia(0.08) contrast(1.02);
+  flex-shrink: 0;
+}
+.hero-degrees {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  width: 100%;
+}
+.degree-pill {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  padding: 2px 7px;
+  border: 1px solid var(--border);
+  color: var(--ink-muted);
+  background: var(--paper-warm);
+  letter-spacing: 0.02em;
+  text-align: center;
+  line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+  .hero-left { flex-direction: row; align-items: center; }
+  .hero-photo { width: 72px; height: 72px; }
+  .hero-degrees { flex-direction: row; flex-wrap: wrap; justify-content: flex-start; }
+  .degree-pill { text-align: left; }
+}
+
+/* Right column: text */
+.hero-title {
+  font-family: var(--display);
+  font-size: 2.6rem;
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--ink);
+  margin-bottom: 0.3rem;
+}
+.hero-subtitle {
+  font-family: var(--mono);
+  font-size: 0.73rem;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 1.1rem;
+}
+.hero-bio {
+  font-size: 0.97rem;
+  color: var(--ink-mid);
+  line-height: 1.8;
+  max-width: 75ch;
+  text-align: justify;
+}
+.hero-bio p + p { margin-top: 0.8rem; }
+
+/* ─── LOERIC FEATURE ─────────────────────────────────── */
+
+.loeric-feature {
+  margin-top: 1.5rem;
+  flex-shrink: 0;
+}
+.loeric-inner {
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  background: var(--paper-card);
+  padding: 1.1rem 1.4rem;
+}
+.loeric-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.4rem 1rem;
+  margin-bottom: 0.6rem;
+}
+.loeric-kicker {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  margin-bottom: 0.15rem;
+}
+.loeric-title {
+  font-family: var(--display);
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--ink);
+}
+.loeric-links {
+  display: flex;
+  gap: 1rem;
+  flex-shrink: 0;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.loeric-link {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  color: var(--accent);
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+.loeric-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem 1.5rem;
+  align-items: start;
+}
+@media (max-width: 640px) {
+  .loeric-body { grid-template-columns: 1fr; }
+}
+.loeric-desc {
+  font-size: 0.93rem;
+  color: var(--ink-mid);
+  line-height: 1.72;
+}
+.loeric-videos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+}
+@media (max-width: 420px) {
+  .loeric-videos { grid-template-columns: 1fr; }
+}
+.loeric-video-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.loeric-video-label {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-muted);
+}
+.loeric-video-wrap iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 1px solid var(--border);
+  display: block;
+}
+
+/* ─── SCROLL CTA ─────────────────────────────────────── */
+
+.scroll-cta-row {
+  display: flex;
+  justify-content: center;
+  padding: 1.25rem 0 1rem;
+}
+.scroll-cta {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink-muted);
+  background: none;
+  border: 1px solid var(--border);
+  padding: 5px 14px;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s, transform 0.15s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.scroll-cta:hover { color: var(--ink); border-color: var(--ink-mid); transform: translateY(2px); }
+.scroll-cta-arrow { font-size: 0.9rem; transition: transform 0.3s; }
+
+/* ─── BELOW-FOLD CONTENT ────────────────────────────── */
+
+.below-fold {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Inline tab bar — only shown on mobile where nav-tabs is hidden */
+.mobile-tabs {
+  display: none;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 0;
+}
+@media (max-width: 640px) {
+  .mobile-tabs { display: flex; }
+}
+.mobile-tab-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--display);
+  font-size: 0.95rem;
+  color: var(--ink-muted);
+  padding: 0.6rem 1.1rem 0.5rem;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: color 0.15s, border-color 0.15s;
+}
+.mobile-tab-btn:hover { color: var(--ink); }
+.mobile-tab-btn[aria-selected="true"] {
+  color: var(--ink);
+  border-bottom-color: var(--accent);
+}
+
+/* ─── TAB PANELS ─────────────────────────────────────── */
+
+.tab-panel {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 2.25rem 0 5rem;
+  animation: fadeIn 0.2s ease;
+}
+.tab-panel[hidden] { display: none; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── RESEARCH FILTER ────────────────────────────────── */
+
+.filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  align-items: center;
+}
+.filter-label {
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-right: 0.25rem;
+}
+.filter-btn {
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  padding: 3px 10px;
+  border: 1px solid var(--border);
+  background: none;
+  color: var(--ink-mid);
+  cursor: pointer;
+  letter-spacing: 0.03em;
+  transition: all 0.12s;
+}
+.filter-btn:hover  { border-color: var(--ink-mid); color: var(--ink); }
+.filter-btn.active { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+
+/* ─── YEAR GROUPS ────────────────────────────────────── */
+
+.year-group { margin-bottom: 2.25rem; }
+.year-label {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  padding-bottom: 0.45rem;
+  margin-bottom: 0.45rem;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ─── ENTRIES ────────────────────────────────────────── */
+
+.entry {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 0.7rem 0.9rem;
+  align-items: start;
+  padding-top: 0.9rem;
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid var(--border-light);
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+.entry:last-child { border-bottom: none; }
+.entry:hover {
+  background: var(--paper-warm);
+  transform: translateX(3px);
+}
+
+@media (max-width: 480px) {
+  .entry { grid-template-columns: 1fr; gap: 0.3rem; }
+}
+
+/* Highlighted: book chapters, Springer, ACM proceedings */
+.entry.highlight {
+  background: var(--accent-light);
+  box-shadow: inset 3px 0 0 var(--accent);
+  padding-left: 0.7rem;
+}
+.entry.highlight:hover {
+  background: color-mix(in srgb, var(--accent-light) 65%, var(--paper-warm));
+}
+
+/* Performances */
+.entry.is-perf {
+  box-shadow: inset 3px 0 0 var(--accent-alt);
+  padding-left: 0.7rem;
+}
+.entry.is-perf:hover {
+  background: color-mix(in srgb, var(--paper-warm) 85%, rgba(44,81,102,0.1));
+}
+
+/* ─── ENTRY TAGS ─────────────────────────────────────── */
+
+.entry-tag {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 3px 6px;
+  display: inline-block;
+  white-space: nowrap;
+  margin-top: 2px;
+}
+.tag-paper  { background: var(--tag-paper-bg); color: var(--tag-paper-fg); }
+.tag-perf   { background: var(--tag-perf-bg);  color: var(--tag-perf-fg);  }
+.tag-talk   { background: var(--tag-talk-bg);  color: var(--tag-talk-fg);  }
+.tag-thesis {
+  background: transparent;
+  color: var(--ink-muted);
+  border: 1px solid var(--border);
+}
+
+/* ─── ENTRY BODY ─────────────────────────────────────── */
+
+.entry-body {
+  font-size: 0.95rem;
+  line-height: 1.62;
+}
+.entry-authors {
+  font-size: 0.83rem;
+  color: var(--ink-muted);
+  margin-bottom: 0.12rem;
+}
+.entry-title {
+  font-style: italic;
+  color: var(--ink);
+  font-size: 0.99rem;
+  line-height: 1.4;
+  margin-bottom: 0.22rem;
+  display: block;
+}
+.entry-venue {
+  font-size: 0.82rem;
+  color: var(--ink-muted);
+  line-height: 1.45;
+}
+.entry-venue em { font-style: italic; }
+
+.pub-badge {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.54rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 1px 5px;
+  border: 1px solid var(--border);
+  color: var(--ink-muted);
+  margin-left: 4px;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+/* ─── PROJECTS ───────────────────────────────────────── */
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.2rem;
+}
+.project-card {
+  background: var(--paper-card);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.18s ease;
+}
+.project-card:hover { transform: translateY(-3px); }
+.project-card.is-featured { box-shadow: inset 3px 0 0 var(--accent); }
+
+.project-img {
+  width: 100%;
+  aspect-ratio: 2 / 1;
+  object-fit: cover;
+  display: block;
+  border-bottom: 1px solid var(--border);
+  filter: sepia(0.06) contrast(1.02);
+}
+.project-body { padding: 0.9rem 1rem; flex: 1; display: flex; flex-direction: column; gap: 0.35rem; }
+.project-kicker {
+  font-family: var(--mono);
+  font-size: 0.61rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+}
+.project-name {
+  font-family: var(--display);
+  font-size: 1.02rem;
+  font-weight: 400;
+  color: var(--ink);
+}
+.project-desc {
+  font-size: 0.88rem;
+  color: var(--ink-mid);
+  line-height: 1.58;
+  flex: 1;
+}
+.project-links { display: flex; gap: 0.75rem; margin-top: 0.55rem; }
+.project-link {
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  color: var(--accent);
+  letter-spacing: 0.03em;
+}
+
+/* ─── MUSIC ──────────────────────────────────────────── */
+
+.releases-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.25rem;
+}
+.release-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  background: var(--paper-card);
+  border: 1px solid var(--border);
+  padding: 0.7rem;
+  transition: transform 0.18s ease;
+}
+.release-card:hover { transform: translateY(-3px); }
+.release-img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border: 1px solid var(--border-light);
+  display: block;
+  filter: sepia(0.1);
+  transition: filter 0.2s;
+}
+.release-card:hover .release-img { filter: sepia(0) contrast(1.03); }
+.release-name {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--ink);
+}
+.release-genre {
+  font-family: var(--mono);
+  font-size: 0.63rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--ink-muted);
+}
+
+/* ─── SECTION HEADING ────────────────────────────────── */
+
+.section-heading {
+  font-family: var(--display);
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.02em;
+}
+
+/* ─── FOOTER ─────────────────────────────────────────── */
+
+footer {
+  border-top: 1px solid var(--border);
+  padding: 1.75rem 2rem;
+}
+.footer-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.footer-copy {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  color: var(--ink-muted);
+  letter-spacing: 0.02em;
+}
+.footer-links {
+  display: flex;
+  gap: 1.25rem;
+}
+.footer-link {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  color: var(--ink-muted);
+  letter-spacing: 0.03em;
+}
+
+/* ─── BACK-TO-TOP FLOAT ──────────────────────────────── */
+
+.float-btn {
+  position: fixed;
+  bottom: 1.75rem;
+  right: 1.75rem;
+  z-index: 150;
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-muted);
+  background: color-mix(in srgb, var(--paper-card) 96%, transparent);
+  border: 1px solid var(--border);
+  padding: 6px 12px;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  transition: color 0.15s, border-color 0.15s, opacity 0.25s, transform 0.25s;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(6px);
+}
+.float-btn.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+.float-btn:hover { color: var(--ink); border-color: var(--ink-mid); }
+
+/* scroll-margin so sticky nav doesn't cover the anchor */
+#content-anchor {
+  scroll-margin-top: calc(var(--nav-h) + 8px);
+}
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav aria-label="Site navigation">
+  <div class="nav-inner">
+    <a href="#" class="nav-name" aria-label="Marco Amerotti, back to top">
+      Marco Amerotti<span>/ researcher</span>
+    </a>
+
+    <div class="nav-tabs" role="tablist" aria-label="Site sections" id="nav-tablist">
+      <button class="nav-tab-btn" role="tab" aria-selected="true"  aria-controls="panel-research" id="nav-tab-research">Research</button>
+      <button class="nav-tab-btn" role="tab" aria-selected="false" aria-controls="panel-projects" id="nav-tab-projects">Projects</button>
+      <button class="nav-tab-btn" role="tab" aria-selected="false" aria-controls="panel-music"    id="nav-tab-music">Music</button>
+    </div>
+
+    <div class="nav-right">
+      <a href="mailto:marco.amerotti@nottingham.ac.uk" class="nav-contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <!-- ── ABOVE THE FOLD ── -->
+  <div class="above-fold">
+
+    <!-- HERO -->
+    <header class="hero">
+      <div class="hero-left">
+        <img
+          class="hero-photo"
+          src="media/marcoamerotti.jpeg"
+          alt="Portrait of Marco Amerotti"
+          width="148" height="148"
+        >
+        <div class="hero-degrees" aria-label="Degrees">
+          <span class="degree-pill">BSc CS · UNIBO '22</span>
+          <span class="degree-pill">MSc CS · KTH '24</span>
+          <span class="degree-pill">BA Phil. · UNIBO '25</span>
+          <span class="degree-pill">PhD Student · UoN</span>
+        </div>
+      </div>
+      <div>
+        <h1 class="hero-title">Marco Amerotti</h1>
+        <p class="hero-subtitle">PhD Researcher · AI &amp; Music · University of Nottingham</p>
+        <div class="hero-bio">
+          <p>
+            I am a PhD student at the Mixed Reality Lab, University of Nottingham,
+            within the UK Turing AI fellowship
+            <a href="https://somabotics.ac.uk">"Somabotics: Creatively Embodying AI"</a>.
+            My research focuses on embodying co-creative musical AI, with particular attention
+            to traditional music practices. Within Somabotics I lead the
+            <a href="https://www.somabotics.ac.uk/project/intelligent-instruments/">Traditionable Machines project</a>.
+          </p>
+          <p>
+            Previously at KTH Royal Institute of Technology (Stockholm), within the ERC project
+            <a href="https://musaiclab.wordpress.com/">MUSAiC</a> — working on live performance systems,
+            practice-led research, and ethical frictions between traditional communities and AI.
+          </p>
+        </div>
+      </div>
+    </header>
+
+      <!-- ── LOERIC FEATURE ── -->
+  <div class="loeric-feature" aria-label="Main research project: LOERIC">
+    <div class="loeric-inner">
+      <div class="loeric-header">
+        <div class="loeric-header-left">
+          <div class="loeric-kicker">Main Research Project</div>
+          <div class="loeric-title">LOERIC</div>
+        </div>
+        <div class="loeric-links">
+          <a class="loeric-link" href="https://amerotz-loeric.readthedocs.io/en/latest/">Docs ↗</a>
+          <a class="loeric-link" href="https://github.com/amerotz/loeric">GitHub ↗</a>
+		  <!--<a class="loeric-link" href="https://www.youtube.com/@SomaboticsCreativelyEmbodyingA/videos">All demos ↗</a>-->
+          <a id="loeric-projects-link" class="loeric-link" href="#tabs" onclick="switchTab('panel-projects'); return false;">All Projects ↗</a>
+        </div>
+      </div>
+      <p class="loeric-desc">
+		A real-time AI system developed for Irish traditional music performance. Given the score of a tune,
+		LOERIC generates expressive ornamentation, timing and dynamics on the fly — listening
+		and adapting to a human co-musician. LOERIC is designed to be highly configurable,
+		allowing one to precisely customise its performance rules and interactive responses.
+      </p>
+      <div class="loeric-videos">
+        <div class="loeric-video-wrap">
+          <div class="loeric-video-label">Session performance</div>
+          <iframe
+            src="https://www.youtube.com/embed/tdsx_44ZzFg?start=41"
+            title="LOERIC session performance"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            loading="lazy"
+          ></iframe>
+        </div>
+        <div class="loeric-video-wrap">
+          <div class="loeric-video-label">Experimental demo</div>
+          <iframe
+            src="https://www.youtube.com/embed/6MD7Hh-DIeQ"
+            title="LOERIC experimental demo"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- SCROLL CTA -->
+    <div class="scroll-cta-row">
+      <button class="scroll-cta" id="scroll-cta-btn" aria-label="Scroll down to content">
+        <span class="scroll-cta-arrow" id="scroll-cta-arrow">↓</span>
+        <span id="scroll-cta-label">Research · Projects · Music</span>
+      </button>
+    </div>
+  </div><!-- /above-fold -->
+
+  <!-- ── BELOW THE FOLD ── -->
+  <div class="below-fold" id="content-anchor">
+
+    <!-- Mobile-only tab bar (nav-tabs hidden at ≤640px) -->
+    <div class="mobile-tabs" role="tablist" aria-label="Site sections" id="mobile-tablist">
+      <button class="mobile-tab-btn" role="tab" aria-selected="true"  aria-controls="panel-research" id="mob-tab-research">Research</button>
+      <button class="mobile-tab-btn" role="tab" aria-selected="false" aria-controls="panel-projects" id="mob-tab-projects">Projects</button>
+      <button class="mobile-tab-btn" role="tab" aria-selected="false" aria-controls="panel-music"    id="mob-tab-music">Music</button>
+    </div>
+
+    <!-- ════════ RESEARCH PANEL ════════ -->
+    <section id="panel-research" role="tabpanel" aria-labelledby="nav-tab-research" class="tab-panel">
+      <div class="filter-row" aria-label="Filter by entry type">
+        <span class="filter-label">Show</span>
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="paper">Papers</button>
+        <button class="filter-btn" data-filter="perf">Performances</button>
+        <button class="filter-btn" data-filter="talk">Presentations</button>
+        <button class="filter-btn" data-filter="thesis">Theses</button>
+      </div>
+
+      <!-- 2026 -->
+      <div class="year-group">
+        <div class="year-label">2026</div>
+
+        <article class="entry" data-type="paper">
+          <span class="entry-tag tag-paper">Paper</span>
+          <div class="entry-body">
+            <div class="entry-authors">Amerotti, M., Benford, S., Hazzard, A., Avila, J. M., Tennent, P., Sturm, B.</div>
+            <span class="entry-title" href="https://dl.acm.org/conference/cc">"Charting Creative Journeys through Musical Performance with AI"</span>
+            <div class="entry-venue">
+              <a href="https://dl.acm.org/conference/cc">C&amp;C'26</a> — ACM Creativity and Cognition
+              <span class="pub-badge">ACM</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="entry is-perf" data-type="perf">
+          <span class="entry-tag tag-perf">Perf.</span>
+          <div class="entry-body">
+            <div class="entry-authors">Students of the Irish World Academy of Music and Dance, Amerotti, M.</div>
+            <span class="entry-title">"LOERIC × Limerick × Glasgow"</span>
+            <div class="entry-venue">
+              <a href="https://www.rcs.ac.uk">Royal Conservatoire of Scotland</a>, Glasgow — April 2, 2026
+            </div>
+          </div>
+        </article>
+
+        <article class="entry is-perf" data-type="perf">
+          <span class="entry-tag tag-perf">Perf.</span>
+          <div class="entry-body">
+            <div class="entry-authors">Students of the Irish World Academy of Music and Dance, Amerotti, M.</div>
+            <span class="entry-title">"LOERIC × Limerick"</span>
+            <div class="entry-venue">
+              <a href="https://www.peggysskylight.co.uk">Peggy's Skylight</a>, Nottingham — March 31, 2026
+            </div>
+          </div>
+        </article>
+
+        <article class="entry" data-type="talk">
+          <span class="entry-tag tag-talk">Talk</span>
+          <div class="entry-body">
+            <div class="entry-authors">Amerotti, M.</div>
+            <a class="entry-title" href="https://www.aims2026.com/programme#h.t9qszatgvw1j">"Small data: situatedness, thickness and the ontological turn"</a>
+            <div class="entry-venue"><a href="https://www.aims2026.com/">AIMS'26</a> — 2nd International Conference on AI Music Studies</div>
+          </div>
+        </article>
+
+        <article class="entry" data-type="paper">
+          <span class="entry-tag tag-paper">Paper</span>
+          <div class="entry-body">
+            <div class="entry-authors">Amerotti, M.</div>
+            <a class="entry-title" href="https://link.springer.com/chapter/10.1007/978-3-032-16893-1_7">"TradJockey: Live Remixing a Performance System for Traditional Music"</a>
+            <div class="entry-venue">
+              <a href="https://sites.google.com/view/aaai26clip">AAAI CLIP'26</a> — In <em>Creative AI for Live Interactive Performances</em>.
+              <em>Communications in Computer and Information Science</em>, vol 2865
+              <span class="pub-badge">Springer</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="entry highlight" data-type="paper">
+          <span class="entry-tag tag-paper">Paper</span>
+          <div class="entry-body">
+            <div class="entry-authors">Amerotti, M., Benford, S., Sturm, B., Vear, C.</div>
+            <a class="entry-title" href="https://link.springer.com/chapter/10.1007/978-3-032-02042-0_9">"A Live Performance Rule System Informed by Irish Traditional Dance Music"</a>
+            <div class="entry-venue">
+              <a href="https://cmmr2023.gttm.jp/">CMMR'23</a> — In <em>Music and Sound Generation in the AI Era</em>.
+              <em>Lecture Notes in Computer Science</em>, vol 15236
+              <span class="pub-badge">Springer</span>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- 2025 -->
+      <div class="year-group">
+        <div class="year-label">2025</div>
+
+        <article class="entry" data-type="thesis">
+          <span class="entry-tag tag-thesis">Thesis</span>
+          <div class="entry-body">
+            <div class="entry-authors">Amerotti, M.</div>
+            <span class="entry-title">"On the intelligence and creativity of an artificial intelligence system for traditional music"</span>
+            <div class="entry-venue">Tesi di laurea in Filosofia — <a href="https://www.unibo.it">Alma Mater Studiorum, Università di Bologna</a></div>
+          </div>
+        </article>
+
+        <article class="entry is-perf" data-type="perf">
+          <span class="entry-tag tag-perf">Perf.</span>
+          <div class="entry-body">
+            <div class="entry-authors">Rutherford, R., Rutherford, J., Amerotti, M.</div>
+            <a class="entry-title" href="https://www.youtube.com/watch?v=tdsx_44ZzFg">"The LOERIC Sessions: Reimagining Contemporary Folk with Rosie, Jamie and an AI performer"</a>
+            <div class="entry-venue">
+              <a href="https://www.nottingham.ac.uk/arts/venues/djanogly-recital-hall.aspx">Djanogly Recital Hall</a>, Nottingham — October 22, 2025
+            </div>
+          </div>
+        </article>
+
+        <article class="entry" data-type="paper">
+          <span class="entry-tag tag-paper">Paper</span>
+          <div class="entry-body">
+            <div class="entry-authors">Amerotti, M., Benford, S., Sturm, B., Avila, J. M.</div>
+            <a class="entry-title" href="https://kth.diva-portal.org/smash/record.jsf?pid=diva2%3A2014007&dswid=-2949">"The Virtual Session: Synchronizing Multiple Virtual Musicians Simulating an Irish Traditional Music Session"</a>
+            <div class="entry-venue">
+              <a href="https://icmc2025.sites.northeastern.edu/">ICMC'25</a> — 50th Anniversary of the International Computer Music Conference
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- 2024 -->
+      <div class="year-group">
+        <div class="year-label">2024</div>
+
+        <article class="entry" data-type="talk">
+          <span class="entry-tag tag-talk">Talk</span>
+          <div class="entry-body">
+            <div class="entry-authors">Benford, S., Amerotti, M., Sturm, B., Vear, C.</div>
+            <span class="entry-title">"Performing with AI as a Practice-led Methodology for AI Music"</span>
+            <div class="entry-venue"><a href="https://boblsturm.github.io/aimusicstudies2024/">AIMS'24</a> — 1st International Conference on AI Music Studies</div>
+          </div>
+        </article>
+
+        <article class="entry" data-type="paper">
+          <span class="entry-tag tag-paper">Paper</span>
+          <div class="entry-body">
+            <div class="entry-authors">Benford, S., Amerotti, M., Sturm, B., Avila, J. M.</div>
+            <a class="entry-title" href="https://dl.acm.org/doi/10.1145/3686038.3686040">"Negotiating Autonomy and Trust when Performing with an AI Musician"</a>
+            <div class="entry-venue">
+              <a href="https://symposium.tas.ac.uk/2024/">TAS'24</a> — 2nd International Symposium on Trustworthy Autonomous Systems
+              <span class="pub-badge">ACM</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="entry" data-type="paper">
+          <span class="entry-tag tag-paper">Paper</span>
+          <div class="entry-body">
+            <div class="entry-authors">Sturm, B., Amerotti, M., Dalmazzo, D., Cros Vila, L., Casini, L., Kanhov, E.</div>
+            <a class="entry-title" href="https://aimc2024.pubpub.org/pub/rppff8mc/release/2">"Stochastic Pirate Radio (KSPR): Generative AI Applied to Simulate Community Radio"</a>
+            <div class="entry-venue">
+              <a href="https://aimc2024.pubpub.org/">AIMC'24</a> — International Conference on AI and Musical Creativity
+            </div>
+          </div>
+        </article>
+
+        <article class="entry" data-type="talk">
+          <span class="entry-tag tag-talk">Talk</span>
+          <div class="entry-body">
+            <div class="entry-authors">Amerotti, M., Sturm, B.</div>
+            <a class="entry-title" href="https://aimc2024.pubpub.org/pub/p9tx21c3/release/2">"Endless generative AI: a practical tutorial"</a>
+            <div class="entry-venue">Workshop at <a href="https://aimc2024.pubpub.org">AIMC'24</a> — International Conference on AI and Musical Creativity</div>
+          </div>
+        </article>
+
+        <article class="entry" data-type="paper">
+          <span class="entry-tag tag-paper">Paper</span>
+          <div class="entry-body">
+            <div class="entry-authors">Amerotti, M., Sturm, B., Benford, S., Maruri-Aguilar, H., Vear, C.</div>
+            <a class="entry-title" href="https://nime.org/proceedings/2024/nime2024_23.pdf">"Evaluation of an Interactive Music Performance System in the Context of Irish Traditional Dance Music"</a>
+            <div class="entry-venue">
+              <a href="https://nime.org/web_archive/2024/">NIME'24</a> — International Conference on New Interfaces for Musical Expression
+            </div>
+          </div>
+        </article>
+
+        <article class="entry" data-type="talk">
+          <span class="entry-tag tag-talk">Talk</span>
+          <div class="entry-body">
+            <div class="entry-authors">Casini, L., Amerotti, M.</div>
+            <a class="entry-title">"Modeling composition and performance of traditional music with AI"</span>
+            <div class="entry-venue">Workshop at <a href="https://computationalcreativity.net/iccc24/">ICCC'24</a> — 15th International Conference on Computational Creativity</div>
+          </div>
+        </article>
+
+        <article class="entry" data-type="thesis">
+          <span class="entry-tag tag-thesis">Thesis</span>
+          <div class="entry-body">
+            <div class="entry-authors">Amerotti, M.</div>
+            <a class="entry-title" href="https://kth.diva-portal.org/smash/get/diva2:1895932/FULLTEXT01.pdf">"Modeling interactive performance of traditional music. Challenges and perspectives"</a>
+            <div class="entry-venue">Master's Thesis in Computer Science — <a href="www.kth.se">KTH Royal Institute of Technology</a>, Stockholm</div>
+          </div>
+        </article>
+      </div>
+
+      <!-- 2023 -->
+      <div class="year-group">
+        <div class="year-label">2023</div>
+
+        <article class="entry highlight" data-type="paper">
+          <span class="entry-tag tag-paper">Paper</span>
+          <div class="entry-body">
+            <div class="entry-authors">Amerotti, M., Benford, S., Sturm, B., Vear, C.</div>
+            <a class="entry-title" href="https://link.springer.com/book/9783031901577">"A Live Performance Rule System Arising from Irish Traditional Dance Music"</a>
+            <div class="entry-venue">
+              <a href="https://cmmr2023.gttm.jp/">CMMR'23</a> — 16th International Symposium on Computer Music Multidisciplinary Research
+              <span class="pub-badge">Springer (preprint)</span>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- 2022 -->
+      <div class="year-group">
+        <div class="year-label">2022</div>
+
+        <article class="entry" data-type="thesis">
+          <span class="entry-tag tag-thesis">Thesis</span>
+          <div class="entry-body">
+            <div class="entry-authors">Amerotti, M.</div>
+            <a class="entry-title" href="https://amslaurea.unibo.it/id/eprint/26323/">"Latent representations for traditional music analysis and generation"</a>
+            <div class="entry-venue">Tesi di laurea in Informatica — <a href="https://www.unibo.it">Alma Mater Studiorum, Università di Bologna</a></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ════════ PROJECTS PANEL ════════ -->
+    <section id="panel-projects" role="tabpanel" aria-labelledby="nav-tab-projects" class="tab-panel" hidden>
+      <div class="projects-grid">
+
+        <div class="project-card is-featured" id="loeric-card">
+          <img class="project-img" src="media/loeric.png" alt="LOERIC — performance system interface">
+          <div class="project-body">
+            <div class="project-kicker">Main research project</div>
+            <h2 class="project-name">LOERIC</h2>
+            <p class="project-desc">
+              A real-time AI system for Irish traditional music performance. Given the score of a tune,
+              LOERIC generates expressive ornamentation, timing and dynamics on the fly — listening
+              and adapting to a human co-musician.
+            </p>
+            <div class="project-links">
+              <a class="project-link" href="https://amerotz-loeric.readthedocs.io/en/latest/">Docs ↗</a>
+              <a class="project-link" href="https://github.com/amerotz/loeric">GitHub ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" id="kspr">
+          <img class="project-img" src="media/KSPR.png" alt="KSPR — Stochastic Pirate Radio">
+          <div class="project-body">
+            <h2 class="project-name">KSPR: Stochastic Pirate Radio</h2>
+            <p class="project-desc">
+              A fully AI-generated radio station streaming continuously on YouTube — music,
+              speech, and station IDs, none of it pre-recorded.
+            </p>
+            <div class="project-links">
+              <a class="project-link" href="https://www.youtube.com/watch?v=c_38XzOnNYY">Listen ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <img class="project-img" src="media/folktunevae.png" alt="Folktune VAE — latent space visualisation">
+          <div class="project-body">
+            <h2 class="project-name">Folktune VAE</h2>
+            <p class="project-desc">
+              A variational autoencoder for Irish traditional dance music —
+              second prize at <a href="https://github.com/boblsturm/aimusicgenerationchallenge2022">AMGC'22</a>.
+            </p>
+            <div class="project-links">
+              <a class="project-link" href="https://amerotz.notion.site/Latent-representations-for-traditional-music-analysis-and-generation-48204d6646a74b01a2e6e71b6d2aea0f">Overview ↗</a>
+              <a class="project-link" href="https://github.com/amerotz/latent-representations-for-traditional-music-analysis-and-generation">GitHub ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <img class="project-img" src="media/abalnn.png" alt="ABALNN — agent-based artificial life">
+          <div class="project-body">
+            <h2 class="project-name">ABALNN</h2>
+            <p class="project-desc">
+              An experiment in agent-based artificial life with neural networks — evolving
+              behaviours without explicit reward shaping.
+            </p>
+            <div class="project-links">
+              <a class="project-link" href="https://amerotz.notion.site/Evolving-Agent-Based-Artificial-Life-with-Neural-Networks-6739ee55f6424dfca31269bec12a5931">Overview ↗</a>
+              <a class="project-link" href="https://github.com/amerotz/artificial-life-abalnn">GitHub ↗</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ════════ MUSIC PANEL ════════ -->
+    <section id="panel-music" role="tabpanel" aria-labelledby="nav-tab-music" class="tab-panel" hidden>
+      <h2 class="section-heading">Releases</h2>
+      <div class="releases-grid">
+
+        <div class="release-card">
+          <a href="https://open.spotify.com/album/1vz2R7P12byD59F8fNaEzI" aria-label="Listen to Exitium on Spotify">
+            <img class="release-img" src="media/exitium.jpg" alt="Album art for Exitium">
+          </a>
+          <div class="release-name">Exitium</div>
+          <div class="release-genre">Dubstep</div>
+        </div>
+
+        <div class="release-card">
+          <a href="https://open.spotify.com/album/4MTQUS8ACBI11qrsrKsyVz?si=Hu97TyiaQeGny9cG8MscFA" aria-label="Listen to Il Rappresentante on Spotify">
+            <img class="release-img" src="media/rappresentante.jpeg" alt="Album art for Il Rappresentante">
+          </a>
+          <div class="release-name">Il Rappresentante</div>
+          <div class="release-genre">Soundtrack</div>
+        </div>
+
+        <div class="release-card">
+          <a href="https://open.spotify.com/album/06ySIZVoOnzzxBvK2gieSq?si=mzfVALIKQUauOxKcWinWbQ" aria-label="Listen to Symposium on Spotify">
+            <img class="release-img" src="media/symposium.png" alt="Album art for Symposium">
+          </a>
+          <div class="release-name">Symposium</div>
+          <div class="release-genre">Soundtrack</div>
+        </div>
+
+        <div class="release-card">
+          <a href="https://open.spotify.com/album/3sQYlCa63owIkDj9mOCE8O?si=m9XRq37UTNCqWGIug8ZdJg" aria-label="Listen to EDMF Vol. 1 on Spotify">
+            <img class="release-img" src="media/edm.png" alt="Album art for Electronic Dance Machine Folk Vol. 1">
+          </a>
+          <div class="release-name">EDMF Vol. 1</div>
+          <div class="release-genre">EDM</div>
+        </div>
+
+        <div class="release-card">
+          <a href="https://open.spotify.com/album/6v16hpyDAe0CoGEkvFShc1?si=6A9WezA6Q1SATbfFqPNB9w" aria-label="Listen to Iliad VI on Spotify">
+            <img class="release-img" src="media/iliad.jpeg" alt="Album art for Iliad VI">
+          </a>
+          <div class="release-name">Iliad VI</div>
+          <div class="release-genre">Soundtrack</div>
+        </div>
+
+      </div>
+    </section>
+
+  </div><!-- /below-fold -->
+</main>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-inner">
+    <span class="footer-copy">
+      &copy; <span id="footer-year">2026</span> Marco Amerotti.
+    </span>
+    <div class="footer-links">
+      <a class="footer-link" href="https://github.com/amerotz">GitHub ↗</a>
+      <a class="footer-link" href="https://scholar.google.com/scholar?q=Marco+Amerotti">Google Scholar ↗</a>
+      <a class="footer-link" href="mailto:marco.amerotti@nottingham.ac.uk">Email ↗</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ── FLOAT BACK-TO-TOP ── -->
+<button class="float-btn" id="float-btn" aria-label="Back to top">↑ top</button>
+
+<script>
+  /* ── Tab switching ── */
+  function switchTab(panelId) {
+    // update all tab button groups
+    ['nav-tab', 'mob-tab'].forEach(prefix => {
+      document.querySelectorAll(`[id^="${prefix}-"]`).forEach(t => t.setAttribute('aria-selected', 'false'));
+    });
+    document.querySelectorAll('[role="tabpanel"]').forEach(p => { p.hidden = true; });
+
+    const panel = document.getElementById(panelId);
+    if (panel) panel.hidden = false;
+
+    const suffix = panelId.replace('panel-', '');
+    ['nav-tab', 'mob-tab'].forEach(prefix => {
+      const t = document.getElementById(`${prefix}-${suffix}`);
+      if (t) t.setAttribute('aria-selected', 'true');
+    });
+  }
+
+  // Wire up all tab buttons (nav + mobile)
+  document.querySelectorAll('[id^="nav-tab-"], [id^="mob-tab-"]').forEach(tab => {
+    tab.addEventListener('click', () => {
+      switchTab(tab.getAttribute('aria-controls'));
+      // Scroll to content anchor when clicking a tab
+      document.getElementById('content-anchor').scrollIntoView({ behavior: 'smooth' });
+    });
+    tab.addEventListener('keydown', e => {
+      const group = tab.closest('[role="tablist"]');
+      const tabs  = [...group.querySelectorAll('[role="tab"]')];
+      const idx   = tabs.indexOf(e.currentTarget);
+      if (e.key === 'ArrowRight') tabs[(idx + 1) % tabs.length].focus();
+      if (e.key === 'ArrowLeft')  tabs[(idx - 1 + tabs.length) % tabs.length].focus();
+    });
+  });
+
+  // LOERIC "Projects ↗" — switch to projects and scroll
+  document.getElementById('loeric-projects-link').addEventListener('click', e => {
+    e.preventDefault();
+    switchTab('panel-projects');
+    document.getElementById('content-anchor').scrollIntoView({ behavior: 'smooth' });
+  });
+
+  /* ── Filter buttons ── */
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      document.querySelectorAll('.entry').forEach(entry => {
+        entry.style.display = (filter === 'all' || entry.dataset.type === filter) ? '' : 'none';
+      });
+      document.querySelectorAll('.year-group').forEach(group => {
+        const visible = [...group.querySelectorAll('.entry')].some(e => e.style.display !== 'none');
+        group.style.display = visible ? '' : 'none';
+      });
+    });
+  });
+
+  /* ── Scroll CTA + back-to-top ── */
+  const floatBtn  = document.getElementById('float-btn');
+  const ctaBtn    = document.getElementById('scroll-cta-btn');
+  const ctaArrow  = document.getElementById('scroll-cta-arrow');
+  const ctaLabel  = document.getElementById('scroll-cta-label');
+  const anchor    = document.getElementById('content-anchor');
+  let   atTop     = true;
+
+  ctaBtn.addEventListener('click', () => {
+    if (atTop) {
+      anchor.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  });
+
+  floatBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY > 180;
+    atTop = !scrolled;
+
+    // CTA morphs
+    ctaArrow.textContent = scrolled ? '↑' : '↓';
+    ctaLabel.textContent = scrolled ? 'Back to top' : 'Research · Projects · Music';
+
+    // Float button appears once scrolled past hero
+    const pastHero = window.scrollY > (document.querySelector('.above-fold').offsetHeight * 0.6);
+    floatBtn.classList.toggle('visible', pastHero);
+  }, { passive: true });
+
+  /* ── Footer year ── */
+  document.getElementById('footer-year').textContent = new Date().getFullYear();
+</script>
+</body>
 </html>
